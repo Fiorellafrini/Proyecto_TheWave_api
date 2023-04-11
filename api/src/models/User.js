@@ -11,13 +11,14 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        validate: { 
-            isEmail: true 
-        },
+        
         email:{
             type : DataTypes.STRING,
             allowNull: false,
-            unique: true
+            unique: true,
+            validate: { 
+                isEmail: true 
+            }
         },
         admin:{
             type: DataTypes.BOOLEAN,
