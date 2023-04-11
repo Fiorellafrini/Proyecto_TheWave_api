@@ -12,15 +12,16 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       image: { // REVISAR
-        type: DataTypes.ARRAY(DataTypes.STRING),
+        type: DataTypes.ARRAY,
         allowNull: false,
       },
       size: {
-        type: DataTypes.STRING,
-        defaultValue: "Talle Unico",
+        type: DataTypes.ENUM('S','M','L','XL','TU'),
+        defaultValue: 'TU',
+        allowNull: false
       },
       price: { // REVISAR
-        type: DataTypes.DECIMAL(6,2),
+        type: DataTypes.FLOAT,
         allowNull: false,
       },
     },
