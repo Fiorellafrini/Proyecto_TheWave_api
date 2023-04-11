@@ -21,3 +21,10 @@ const Federico = () => {
     nacionalidad: argentina,
   };
 }
+const Constanza = () => {
+  return {
+    nombre: ConstanzaEspeche,
+    edad: 34,
+    nacionalidad: argentina,
+  };
+}
