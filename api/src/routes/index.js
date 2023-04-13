@@ -6,7 +6,8 @@ const userRouter=require('./userRouter')
 const productRouter=require('./productRouter')
 // const courseRouter=require('./courseRouter')
 // const brandRouter=require('./brandRouter')
-
+const orderRouter=require('./orderRouter')
+const filterRouter=require('./filterRouter')
 const router= Router();
 
 // Rutas
@@ -16,6 +17,9 @@ router.use('/User', userRouter)
 router.use('/Product',productRouter)
 // router.use('/Course', courseRouter)
 // router.use('/Brand', brandRouter)
+router.use('/Order',orderRouter )
+router.use('/Filter',filterRouter)
+
 
 
 module.exports = router;
