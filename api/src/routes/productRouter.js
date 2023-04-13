@@ -22,7 +22,12 @@ productRouter.get("/:id", async (req, res) => {
 
 productRouter.get("/", async (req, res) => {
   try {
+    const { name } = req.query;
     const getAllProducts = await getProducts();
+    if(name){
+      const products = await byName(name);
+      if(products) return res.status(200).json(products)
+    }
     res.status(200).json(getAllProducts);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -31,16 +36,16 @@ productRouter.get("/", async (req, res) => {
 
 ////////////////////////////////////////////// BY NAME ////////////////////////////////////////////////
 
-productRouter.get("/name", async (req, res) => {
-  const { name } = req.query;
+// productRouter.get("/", async (req, res) => {
+  // const { name } = req.query;
   // console.log("Name value:", name);
-  try {
-    const products = await byName(name);
-    res.status(200).json(products);
-  } catch (error) {
-    res.status(404).send({ error: error.message });
-  }
-});
+  // try {
+    // const products = await byName(name);
+//     res.status(200).json(products);
+//   } catch (error) {
+//     res.status(404).send({ error: error.message });
+//   }
+// });
 
 ////////////////////////////////////////// POST PRODUCTS /////////////////////////////////////////////////
 
