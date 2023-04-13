@@ -5,6 +5,7 @@ const getProductId = require("../controllers/getProductId");
 const getProducts = require("../controllers/getProducts");
 const postProducts = require("../controllers/postProducts");
 const byName = require("../controllers/productByName");
+const upDateActive = require ("../controllers/putProduct")
 
 //////////////////////////////////////// GET PRODUCT ID ///////////////////////////////////////////////////
 
@@ -59,17 +60,48 @@ productRouter.post("/", async (req, res) => {
   }
 });
 
-//////////////////////////////////////////////// DELETE /////////////////////////////////////////////////
+//////////////////////////////////////////////// PUT ACTIVE PRODUCT /////////////////////////////////////////////////
 
-productRouter.delete("/delete/:id", async (req, res) => {
-  const { id } = req.params;
+
+
+// productRouter.delete("/delete/:id", async (req, res) => {
+//   const { id } = req.params;
+//   try {
+//     const deleteProduct = await Product.findByPk(id);
+//     deleteProduct.destroy();
+//     res.status(200).json(deleteProduct);
+//   } catch (error) {
+//     res.status(404).send({ error: error.message });
+//   }
+// });
+productRouter.put('/:id/active', async (req, res) => {
+  const id = req.params.id;
+  const { name, imagen, size, price, active } = req.body;
+  // const { active } = req.body;
+
   try {
-    const deleteProduct = await Product.findByPk(id);
-    deleteProduct.destroy();
-    res.status(200).json(deleteProduct);
+    const product = await upDateActive(id, { name, imagen, size, price, active });
+    if (product) return res.status(200).json(product);
   } catch (error) {
-    res.status(404).send({ error: error.message });
+    res.status(500).json({ mensaje: error.message });
   }
+
+  // try {
+  //   // Busca el producto en la base de datos
+  //   const producto = await Product.findOne({ where: { id } });
+
+  //   // Si el producto existe, actualiza su propiedad "activo"
+  //   if (producto) {
+  //     await producto.update({ activo });
+  //     res.json({ mensaje: 'Product updated successfully' });
+  //   } else {
+  //     res.status(404).json({ mensaje: 'The specified product was not found' });
+  //   }
+  // } catch (error) {
+  //   console.log(error);
+  //   res.status(500).json({ mensaje: 'There was an error updating the product' });
+  // }
 });
+
 
 module.exports = productRouter;
