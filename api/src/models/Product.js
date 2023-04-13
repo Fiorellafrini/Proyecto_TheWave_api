@@ -6,10 +6,20 @@ module.exports = (sequelize) => {
   sequelize.define(
     "Product",
     {
-      
+      // id: {
+      //   // type: DataTypes.INTEGER,
+      //   // primaryKey: true,
+      //   // autoincrement: true,
+      //   // unique: true
+      //  type: DataTypes.UUID, 
+      //  defaultValue: DataTypes.UUIDV4, 
+      //  primaryKey: true,
+      // allowNull: false,
+      // },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
+        // unique: true,
       },
       imagen: {
         type: DataTypes.ARRAY(DataTypes.STRING),

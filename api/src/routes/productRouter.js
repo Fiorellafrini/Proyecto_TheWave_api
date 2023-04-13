@@ -49,7 +49,7 @@ productRouter.get("/", async (req, res) => {
 
 ////////////////////////////////////////// POST PRODUCTS /////////////////////////////////////////////////
 
-productRouter.post("/post", async (req, res) => {
+productRouter.post("/", async (req, res) => {
   try {
     const postProduct = await postProducts(req.body);
     if (!postProduct) throw Error("product not found");

@@ -26,6 +26,7 @@ const byName = async (name) => {
     
     where: {
       name: { [Op.iLike]: `%${name}%` },
+      // name: { [Op.iLike]: sequelize.fn('LOWER', `%${name}%`) }
     },
   });
   if (dataName.length) return dataName;
