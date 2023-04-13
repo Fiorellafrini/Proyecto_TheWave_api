@@ -1,21 +1,21 @@
 const { Router } = require("express");
 //importamos
 const userRouter=require('./userRouter')
-// const typeRouter=require('./typeRouter')
+const typeRouter=require('./typeRouter')
 // const reviewRouter=require('./reviewRouter')
 const productRouter=require('./productRouter')
 // const courseRouter=require('./courseRouter')
-// const brandRouter=require('./brandRouter')
+const brandRouter=require('./brandRouter')
 
 const router= Router();
 
 // Rutas
 router.use('/User', userRouter)
-// router.use('/Type', typeRouter)
+router.use('/Type', typeRouter)
 // router.use('/Review', reviewRouter)
 router.use('/Product',productRouter)
 // router.use('/Course', courseRouter)
-// router.use('/Brand', brandRouter)
+router.use('/Brand', brandRouter)
 
 
 module.exports = router;
