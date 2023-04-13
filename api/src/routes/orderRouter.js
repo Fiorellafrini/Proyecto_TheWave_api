@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const orderRouter = Router();
 const { Product } = require("../db");
-const { fn, col } = require("sequelize");
+const { fn, col } = require("sequelize"); //col es de columna
 
 orderRouter.get("/price/less", async (req, res) => {
   try {
@@ -30,7 +30,7 @@ orderRouter.get("/price/higher", async (req, res) => {
 orderRouter.get("/name/asc", async (req, res) => {
   try {
     const products = await Product.findAll({
-      order: [[fn("TRIM", col("name")), "ASC"]],
+      order: [[fn("TRIM", col("name")), "ASC"]], // se fija en la columna name
     });
     res.status(200).json(products);
   } catch (error) {
