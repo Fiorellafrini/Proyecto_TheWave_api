@@ -11,18 +11,23 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      image: { // REVISAR
-        type: DataTypes.ARRAY,
+      imagen: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: false,
       },
       size: {
-        type: DataTypes.ENUM('S','M','L','XL','TU'),
-        defaultValue: 'TU',
-        allowNull: false
+        type: DataTypes.ENUM("S", "M", "L", "XL", "XXL", "TU"),
+        defaultValue: "TU",
+        allowNull: false,
       },
-      price: { // REVISAR
+      price: {
         type: DataTypes.FLOAT,
         allowNull: false,
+      },
+      active: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
       },
     },
     {
@@ -30,15 +35,3 @@ module.exports = (sequelize) => {
     }
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-

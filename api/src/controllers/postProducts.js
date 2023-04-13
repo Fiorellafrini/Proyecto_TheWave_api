@@ -2,12 +2,13 @@ const { Product } = require("../db");
 
 const postProducts = async (product) => {
   try {
-    const { name, image, size, price } = product;
-    if (!name || !image || !size || !price)
+    const { name, imagen, size, price } = product;
+    if (!name || !imagen || !size || !price)
       throw new Error("Missing Information");
     const newProduct = await Product.create({
+      // const newProduct = await Product.findOrCreate({
       name,
-      image,
+      imagen,
       size,
       price,
     });

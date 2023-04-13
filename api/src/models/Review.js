@@ -15,6 +15,7 @@ module.exports = (sequelize) => {
         allowNull: true // porque puede ser que aun no este calificada
         
     },
+   
 
 },  
 {
