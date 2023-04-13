@@ -5,6 +5,7 @@ const postUser = async (user) => {
     const { name, lastName, email } = user;
     if (!name || !lastName || !email) throw new Error("Missing Information");
     const newUser = await User.create({
+      // const newUser= await User.findOrCreate({
       name,
       lastName,
       email,
