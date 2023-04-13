@@ -10,7 +10,7 @@ const getProducts = async () => {
     const products = response.data;
 
     // Itera sobre los productos y crea una entrada en la base de datos
-    let count = 0;
+    // let count = 0;
     for (const product of products) {
       await Product.create({
         id: product.id,
@@ -22,7 +22,7 @@ const getProducts = async () => {
       });
       // console.log(product.name);
 
-      count++;
+      // count++;
     }
     // console.log(`Se crearon ${count} productos`);
 
