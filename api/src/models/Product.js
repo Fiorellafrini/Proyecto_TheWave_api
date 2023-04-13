@@ -6,16 +6,6 @@ module.exports = (sequelize) => {
   sequelize.define(
     "Product",
     {
-      // id: {
-      //   // type: DataTypes.INTEGER,
-      //   // primaryKey: true,
-      //   // autoincrement: true,
-      //   // unique: true
-      //  type: DataTypes.UUID, 
-      //  defaultValue: DataTypes.UUIDV4, 
-      //  primaryKey: true,
-      // allowNull: false,
-      // },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -31,7 +21,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       price: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       active: {
