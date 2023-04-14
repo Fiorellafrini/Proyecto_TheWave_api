@@ -66,8 +66,8 @@ Property.belongsTo(Sale,{as:"ventas",foreignKey:"saleId"}) */
 // Type.hasMany(Product, { foreignKey: "type" });
 // Product.belongsTo(Product, { foreignKey: "type", field: "name" });
 
-Type.hasMany(Product, { foreignKey: "typeId" });
-Product.belongsTo(Type, { foreignKey: "typeId" });
+Type.hasMany(Product, { foreignKey: "typeName" });
+Product.belongsTo(Type, { foreignKey: "typeName" });
 
 
 Brand.hasMany(Product, { foreignKey: "brand" });
