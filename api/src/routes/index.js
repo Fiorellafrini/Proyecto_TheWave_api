@@ -12,15 +12,15 @@ const brandRouter=require('./brandRouter')
 const router= Router();
 
 // Rutas
-router.use('/User', userRouter)
-router.use('/Type', typeRouter)
+router.use('/user', userRouter)
+router.use('/type', typeRouter)
 // router.use('/Review', reviewRouter)
-router.use('/Product',productRouter)
+router.use('/product',productRouter)
 // router.use('/Course', courseRouter)
-router.use('/Order',orderRouter )
-router.use('/Filter',filterRouter)
+router.use('/order',orderRouter )
+router.use('/filter',filterRouter)
 
-router.use('/Brand', brandRouter)
+router.use('/brand', brandRouter)
 
 
 module.exports = router;

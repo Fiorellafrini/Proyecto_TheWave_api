@@ -2,7 +2,7 @@ const { Router } = require("express");
 const filterRouter = Router();
 const { Product, Type, Brand } = require("../db");
 
-filterRouter.get("/:type_id", async (req, res) => {
+filterRouter.get("/type/:type_id", async (req, res) => {
   try {
     const products = await Product.findAll({
       where: {
