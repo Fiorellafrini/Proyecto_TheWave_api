@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Product } = require("../db");
+const { Product, Brand, Type } = require("../db");
 
 // const getProducts = async () => {
 //   const fieldId = "1I3hyk2bWiAgWZ7uSQYKocKVPAZfI7Fus"; //Id del archivo json del drive
@@ -36,9 +36,7 @@ const { Product } = require("../db");
 
 // module.exports = getProducts;
 const getProducts = async () => {
-  // const fieldId = "1I3hyk2bWiAgWZ7uSQYKocKVPAZfI7Fus"; //Id del archivo json del drive
-  // const url = `https://drive.google.com/uc?id=${fieldId}&export=download`;
-  const url = `https://run.mocky.io/v3/135bd59d-e1de-4592-8e9d-0cdea3c2bfab`
+  const url = `https://run.mocky.io/v3/135bd59d-e1de-4592-8e9d-0cdea3c2bfab`;
 
   try {
     const response = await axios.get(url);
@@ -46,10 +44,8 @@ const getProducts = async () => {
 
     // Itera sobre los productos y crea una entrada en la base de datos
     for (const product of products) {
-      //  console.log(`ID: ${product.id}`);
       await Product.findOrCreate({
-        // where: { id: product.id },
-        where: {name: product.name},
+        where: { name: product.name },
         defaults: {
           // name: product.name,
           imagen: product.imagen,
@@ -61,7 +57,15 @@ const getProducts = async () => {
     }
 
     // Retorna todos los productos en la base de datos
-    const allProducts = await Product.findAll();
+    const allProducts = await Product.findAll({
+      include: [
+        {
+          model: Brand,
+          attributes: ["name"],
+          through: { attributes: [] },
+        },
+      ],
+    });
     return allProducts;
   } catch (error) {
     return error.message;
