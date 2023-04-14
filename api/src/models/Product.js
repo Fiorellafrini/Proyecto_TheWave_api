@@ -32,6 +32,9 @@ module.exports = (sequelize) => {
       type_id: {
         type:DataTypes.INTEGER
       },
+      brands_id:{
+        type:DataTypes.INTEGER
+      }
     },
     {
       timestamps: false,

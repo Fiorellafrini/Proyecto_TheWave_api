@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Product } = require("../db");
+const { Product, Brand, Type } = require("../db");
 
 const getProducts = async () => {
   // const fieldId = "1I3hyk2bWiAgWZ7uSQYKocKVPAZfI7Fus"; //Id del archivo json del drive
@@ -12,10 +12,8 @@ const getProducts = async () => {
 
     // Itera sobre los productos y crea una entrada en la base de datos
     for (const product of products) {
-      //  console.log(`ID: ${product.id}`);
       await Product.findOrCreate({
-        // where: { id: product.id },
-        where: {name: product.name},
+        where: { name: product.name },
         defaults: {
           // name: product.name,
           imagen: product.imagen,

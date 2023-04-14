@@ -68,7 +68,7 @@ Type.hasMany(Product, { foreignKey: "typeId" });
 Product.belongsTo(Type, { foreignKey: "typeId" });
 
 Brand.hasMany(Product, { foreignKey: "brand" });
-Product.belongsTo(Product, { foreignKey: "brand", field: "name" });
+Product.belongsTo(Brand, { foreignKey: "brand" });
 
 // sequelize.sync();
 
