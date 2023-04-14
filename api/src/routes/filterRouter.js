@@ -8,20 +8,17 @@ const { Op } = require("sequelize");
 filterRouter.get("/:type_id", async (req, res) => {
   try {
     const products = await Product.findAll({
-      include: [
-        {
-          model: Type,
-          where: {
-            name: req.params.name,
-          },
-        },
-      ],
+      where: {
+        type_id: req.params.type_id,
+      },
+      include: Type,
     });
     res.status(200).json(products);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
+
 
 // let info = require("../controllers/info");
 
