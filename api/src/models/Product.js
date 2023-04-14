@@ -29,6 +29,12 @@ module.exports = (sequelize) => {
         allowNull: false,
         defaultValue: true,
       },
+      type_id: {
+        type:DataTypes.INTEGER
+      },
+      brands_id: {
+        type:DataTypes.INTEGER
+      }
     },
     {
       timestamps: false,
