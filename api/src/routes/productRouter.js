@@ -5,6 +5,7 @@ const getProductId = require("../controllers/getProductId");
 const getProducts = require("../controllers/getProducts");
 const postProducts = require("../controllers/postProducts");
 const byName = require("../controllers/productByName");
+const upDateActive = require("../controllers/putProduct");
 
 //////////////////////////////////////// GET PRODUCT ID ///////////////////////////////////////////////////
 
@@ -24,9 +25,9 @@ productRouter.get("/", async (req, res) => {
   try {
     const { name } = req.query;
     const getAllProducts = await getProducts();
-    if(name){
+    if (name) {
       const products = await byName(name);
-      if(products) return res.status(200).json(products)
+      if (products) return res.status(200).json(products);
     }
     res.status(200).json(getAllProducts);
   } catch (error) {
@@ -37,10 +38,10 @@ productRouter.get("/", async (req, res) => {
 ////////////////////////////////////////////// BY NAME ////////////////////////////////////////////////
 
 // productRouter.get("/", async (req, res) => {
-  // const { name } = req.query;
-  // console.log("Name value:", name);
-  // try {
-    // const products = await byName(name);
+// const { name } = req.query;
+// console.log("Name value:", name);
+// try {
+// const products = await byName(name);
 //     res.status(200).json(products);
 //   } catch (error) {
 //     res.status(404).send({ error: error.message });
@@ -59,7 +60,27 @@ productRouter.post("/", async (req, res) => {
   }
 });
 
-//////////////////////////////////////////////// DELETE /////////////////////////////////////////////////
+//////////////////////////////////////////////// PUT ACTIVE PRODUCT /////////////////////////////////////////////////
+
+productRouter.put("/:id/active", async (req, res) => {
+  const id = req.params.id;
+  const { name, imagen, size, price, active } = req.body;
+
+  try {
+    const product = await upDateActive(id, {
+      name,
+      imagen,
+      size,
+      price,
+      active,
+    });
+    if (product) return res.status(200).json(product);
+  } catch (error) {
+    res.status(500).json({ mensaje: error.message });
+  }
+});
+
+///////////////////////////////////////// DELETE ////////////////////////////////////////////////
 
 productRouter.delete("/delete/:id", async (req, res) => {
   const { id } = req.params;

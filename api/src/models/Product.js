@@ -21,7 +21,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       price: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       active: {
@@ -29,6 +29,12 @@ module.exports = (sequelize) => {
         allowNull: false,
         defaultValue: true,
       },
+      type_id: {
+        type:DataTypes.INTEGER
+      },
+      brands_id:{
+        type:DataTypes.INTEGER
+      }
     },
     {
       timestamps: false,
