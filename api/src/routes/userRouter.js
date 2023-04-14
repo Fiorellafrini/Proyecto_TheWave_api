@@ -3,7 +3,9 @@ const userRouter = Router()
 const { User } = require ('../db');
 const getUserId = require('../controllers/getUserId');
 const postUser = require ('../controllers/postUser');
-// const deleteUserId = require ('../controllers/postUser')
+// const deleteUserId = require ('../controllers/postUser');
+const upDateUser = require('../controllers/putUser');
+
 
 ////////////////////////////////////////////// G E T ////////////////////////////////////////////////////
 userRouter.get('/:id', async(req, res) =>{
@@ -56,5 +58,26 @@ userRouter.delete('/delete/:id', async(req, res) =>{
       }
     });
   
+
+
+//////////////////////////////////////////////// PUT /////////////////////////////////////////////////////
+
+userRouter.put("/:id/active", async (req, res) => {
+  const id = req.params.id;
+  const { name,lastName,email,active } = req.body;
+
+  try {
+    const user = await upDateUser(id, {
+      name,
+      lastName,
+      email,
+      active
+    });
+    if (user) return res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ mensaje: error.message });
+  }
+});
+
 
 module.exports= userRouter;
