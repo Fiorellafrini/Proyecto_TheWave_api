@@ -5,7 +5,7 @@ const { Op } = require("sequelize");
 
 // // filterRouter.get("/brand", async (req, res) => {});
 
-filterRouter.get("/:type_id", async (req, res) => {
+filterRouter.get("/type/:type_id", async (req, res) => {
   try {
     const products = await Product.findAll({
       where: {
