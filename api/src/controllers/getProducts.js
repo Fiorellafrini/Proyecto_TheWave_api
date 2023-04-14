@@ -23,7 +23,7 @@ const getProducts = async () => {
           price: product.price,
           active: product.active,
           type_id: product.type_id,
-          brands_id: product.brand,
+          // brands_id: product.brand,
         },
       });
     }
