@@ -18,14 +18,24 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
+// const { getProducts } = require ('./src/controllers/getProducts.js')
 const { conn } = require("./src/db.js");
 /* const { property } = require("./src/controller/controllerProperty");
 const { typeDb } = require("./src/controller/controllerType");
 const { servicioDb } = require("./src/controller/controlerServicios"); */
 
+// conn.sync({ force: false }).then(() => {
+//   server.listen(3001, async() => {
+
+    
+
 // Syncing all the models at once.
 conn.sync({ force: true }).then(async () => {
     server.listen(3001, () => {
+  // conn.sync({ force: false }).then(() => {
+  //   server.listen(3001, async() => {
+  //     await getProducts()
+
         console.log("Api listening on http://localhost:3001"); // eslint-disable-line no-console
     });
     /*  await typeDb();
