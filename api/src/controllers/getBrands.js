@@ -1,9 +1,9 @@
-const { default: axios } = require("axios")
-const {Brand} = require("../db")
+const axios = require("axios");
+const { Brand} = require("../db");
 
 const getBrands = async () => {
-    const url = "https://run.mocky.io/v3/f3ebe0cb-abbc-48ea-93d3-a002747a1de7"
-    try {
+  const url = "https://run.mocky.io/v3/f3ebe0cb-abbc-48ea-93d3-a002747a1de7";
+  try {
         const response = await axios.get(url)
         const brands = response.data
         for(const brand of brands){
