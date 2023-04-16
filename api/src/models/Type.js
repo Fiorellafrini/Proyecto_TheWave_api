@@ -6,9 +6,17 @@ module.exports = (sequelize) => {
   sequelize.define(
     "Type",
     {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        autoIncrement: true,
+        field: "id_type"
+      },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
+        field: "name_type"
       },
     },
     {

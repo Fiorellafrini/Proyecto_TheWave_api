@@ -23,21 +23,21 @@ productRouter.get("/:id", async (req, res) => {
 
 productRouter.get("/", async (req, res) => {
   try {
-    const { name, page = 0, size = 5} = req.query;
+    const { name, page = 0, size = 5 } = req.query;
 
-  if (page && size) {
-    let options = {
-      limit: +size,
-      offset: +page * +size,
-    };
+    if (page && size) {
+      let options = {
+        limit: +size,
+        offset: +page * +size,
+      };
 
-    const { count, rows } = await Product.findAndCountAll(options);
+      const { count, rows } = await Product.findAndCountAll(options);
 
-    return res.json({
-      total: count,
-      products: rows,
-    });
-  };
+      return res.json({
+        total: count,
+        products: rows,
+      });
+    }
     const getAllProducts = await getProducts();
     if (name) {
       const products = await byName(name);
@@ -68,7 +68,7 @@ productRouter.post("/", async (req, res) => {
   try {
     const postProduct = await postProducts(req.body);
     if (!postProduct) throw Error("product not found");
-    res.status(200).json(postProduct);
+    res.status(201).json(postProduct);
   } catch (error) {
     res.status(404).send({ error: error.message });
   }

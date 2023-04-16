@@ -19,16 +19,17 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
-/* const { property } = require("./src/controller/controllerProperty");
-const { typeDb } = require("./src/controller/controllerType");
-const { servicioDb } = require("./src/controller/controlerServicios"); */
+
+const getBrands  = require("./src/controllers/getBrands.js");
+const  getType = require("./src/controllers/getType.js"); 
+const getProducts = require("./src/controllers/getProducts.js");
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(async () => {
+conn.sync({ alter: true }).then(async () => {
     server.listen(3001, () => {
         console.log("Api listening on http://localhost:3001"); // eslint-disable-line no-console
     });
-    /*  await typeDb();
-    await servicioDb();
-  await property(); */
+    await getType();
+    await getBrands();
+    await getProducts(); 
 });
