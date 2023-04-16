@@ -23,7 +23,21 @@ productRouter.get("/:id", async (req, res) => {
 
 productRouter.get("/", async (req, res) => {
   try {
-    const { name } = req.query;
+    const { name, page = 0, size = 5} = req.query;
+
+  if (page && size) {
+    let options = {
+      limit: +size,
+      offset: +page * +size,
+    };
+
+    const { count, rows } = await Product.findAndCountAll(options);
+
+    return res.json({
+      total: count,
+      products: rows,
+    });
+  };
     const getAllProducts = await getProducts();
     if (name) {
       const products = await byName(name);
