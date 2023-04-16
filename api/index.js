@@ -24,7 +24,7 @@ const { typeDb } = require("./src/controller/controllerType");
 const { servicioDb } = require("./src/controller/controlerServicios"); */
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(async () => {
+conn.sync({ force: false }).then(async () => {
     server.listen(3001, () => {
         console.log("Api listening on http://localhost:3001"); // eslint-disable-line no-console
     });
