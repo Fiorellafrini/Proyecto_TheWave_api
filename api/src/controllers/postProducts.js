@@ -2,7 +2,8 @@ const { Product, Type, Brand } = require("../db");
 
 const postProducts = async (product) => {
   try {
-    const { name, imagen, size, price, type, brand } = product;
+
+    const { name, imagen, size, price, id_type, id_brand } = product;
     if (!name && !imagen && !size && !price ) {
       throw new Error("Missing Information");
     }
@@ -10,13 +11,16 @@ const postProducts = async (product) => {
       name,
       imagen,
       size,
-      price
+      price,
+      id_type,
+      id_brand
+
     });
-    const types = await Type.findAll({where: {id_type:type}});
-    const brands = await Brand.findAll({where: {id_brand:brand}});
+    const types = await Type.findOne({where: {id_type: id_type}});
+    const brands = await Brand.findOne({where: {id_brand:id_brand}});
     newProduct.setType(types);
     newProduct.setBrand(brands);
-  return "exito"
+  return "exito al crear el producto"
   }
   catch (error) {
     return error.message;
