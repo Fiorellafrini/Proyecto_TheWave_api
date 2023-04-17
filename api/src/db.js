@@ -40,14 +40,14 @@ const { User, Type, Review, Product, Brand } = sequelize.models;
 
 // Aca vendrian las relaciones
 
-Product.hasMany(Review, { foreignKey: "product_id", sourceKey: "id" });
+/* Product.hasMany(Review, { foreignKey: "product_id", sourceKey: "id" });
 Review.belongsTo(Product, { foreignKey: "product_id", targetKey: "id" });
 
 User.hasMany(Review, { foreignKey: "user_id", sourceKey: "id" });
 Review.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
 //----------------------
 User.hasMany(Product, { foreignKey: "id_user", sourceKey: "id" });
-Product.belongsTo(User, { foreignKey: "id_user", targetKey: "id" });
+Product.belongsTo(User, { foreignKey: "id_user", targetKey: "id" }); */
 /*
 Booking.hasOne(Property,{foreignKey:"autor_propId", sourceKey: "id"})
 Property.belongsTo(Booking,{foreignKey:"autor_propId", targetKey: "id" }) */
@@ -64,11 +64,11 @@ Property.belongsTo(Sale,{as:"ventas",foreignKey:"saleId"}) */
 // Type.hasMany(Product, { foreignKey: "type" });
 // Product.belongsTo(Product, { foreignKey: "type", field: "name" });
 
-Type.hasMany(Product, { foreignKey: "typeId" });
-Product.belongsTo(Type, { foreignKey: "typeId" });
+Type.hasMany(Product,{ foreignKey: "id_type" });
+Product.belongsTo(Type,{ foreignKey: "id_type" });
 
-Brand.hasMany(Product, { foreignKey: "brand" });
-Product.belongsTo(Brand, { foreignKey: "brand" });
+Brand.hasMany(Product, { foreignKey: "id_brand"});
+Product.belongsTo(Brand, { foreignKey: "id_brand",});
 
 // sequelize.sync();
 

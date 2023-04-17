@@ -5,7 +5,15 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
     "Product",
-    {
+    { 
+        id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        autoIncrement: true,
+        unique: true,
+        field: "id_product"
+      },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -28,12 +36,6 @@ module.exports = (sequelize) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true,
-      },
-      type_id: {
-        type:DataTypes.INTEGER
-      },
-      brands_id:{
-        type:DataTypes.STRING
       }
     },
     {
