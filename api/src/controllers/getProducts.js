@@ -18,8 +18,8 @@ const getProducts = async () => {
           imagen: product.imagen,
           size: product.size,
           price: product.price,
-          id_type: product.type_id,
-          id_brand: product.brands_id,
+          id_type: product.id_type,
+          id_brand: product.id_brand,
         },
       });
     }
