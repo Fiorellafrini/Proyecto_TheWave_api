@@ -10,6 +10,7 @@ filterRouter.get("/type/:type_id", async (req, res) => {
       },
       include: Type,
     });
+    console.log(products);
     res.status(200).json(products);
   } catch (error) {
     res.status(400).json({ error: error.message });
