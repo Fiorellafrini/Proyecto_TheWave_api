@@ -2,26 +2,28 @@ const { Router } = require("express");
 const filterRouter = Router();
 const { Product, Type, Brand } = require("../db");
 
-filterRouter.get("/type/:type_id", async (req, res) => {
+
+filterRouter.get("/type/:id_type", async (req, res) => {
   try {
     const products = await Product.findAll({
       where: {
-        type_id: req.params.type_id,
+        id_type: req.params.id_type,
       },
       include: Type,
     });
-    console.log(products);
     res.status(200).json(products);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
 
-filterRouter.get("/brands/:brands_id", async (req, res) => {
+
+
+filterRouter.get("/brands/:id_brand", async (req, res) => {
   try {
     const product = await Product.findAll({
       where: {
-        brands_id: req.params.brands_id,
+        id_brand: req.params.id_brand,
       },
       include: Brand,
     });
