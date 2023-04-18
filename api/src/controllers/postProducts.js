@@ -11,13 +11,16 @@ const postProducts = async (product) => {
       imagen,
       size,
       price,
-      description
+      description,
+      id_type,
+      id_brand
+
     });
-    const types = await Type.findAll({where: {id_type:type}});
-    const brands = await Brand.findAll({where: {id_brand:brand}});
+    const types = await Type.findOne({where: {id_type: id_type}});
+    const brands = await Brand.findOne({where: {id_brand:id_brand}});
     newProduct.setType(types);
     newProduct.setBrand(brands);
-  return "exito"
+  return "exito al crear el producto"
   }
   catch (error) {
     return error.message;
