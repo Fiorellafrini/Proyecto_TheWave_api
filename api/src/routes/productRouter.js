@@ -21,9 +21,48 @@ productRouter.get("/:id", async (req, res) => {
 
 ///////////////////////////////////////// GET PRODUCTS ///////////////////////////////////////////////////
 
+// productRouter.get("/", async (req, res) => {
+//   try {
+//     const { name, page = 0, size = 5, sort } = req.query; // Obtén el valor del parámetro de ordenamiento "sort" de la URL
+
+//     if (page && size) {
+//       let options = {
+//         limit: +size,
+//         offset: +page * +size,
+//       };
+
+//       const { count, rows } = await Product.findAndCountAll(options);
+
+//       return res.json({
+//         total: count,
+//         products: rows,
+//       });
+//     }
+
+//     let getAllProducts;
+//     if (sort) {
+//       // Si se proporciona el parámetro de ordenamiento "sort", utiliza la función getProducts con el valor de sort
+//       getAllProducts = await getProducts(sort);
+//     } else {
+//       // Si no se proporciona el parámetro de ordenamiento, utiliza la función getProducts sin ningún parámetro
+//       getAllProducts = await getProducts();
+//     }
+
+//     if (name) {
+//       const products = await byName(name);
+//       if (products) return res.status(200).json(products);
+//     }
+
+//     res.status(200).json(getAllProducts);
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//   }
+// });
 productRouter.get("/", async (req, res) => {
+  // http://localhost:3001/product?sort=priceDesc&type=1&nameDesc(con esto hacen las combinaciones como quieren en el insomnia)
+  // http://localhost:3001/product?sort=priceAsc&brand=1
   try {
-    const { name, page = 0, size = 5 } = req.query;
+    const { name, page = 0, size = 5, sort, type, brand } = req.query; //  parámetros de la URL
 
     if (page && size) {
       let options = {
@@ -38,12 +77,34 @@ productRouter.get("/", async (req, res) => {
         products: rows,
       });
     }
-    const getAllProducts = await getProducts();
+
+    let getAllProducts;
+    if (sort) {
+      // Si se proporciona el parámetro de ordenamiento "sort", utiliza la función getProducts con el valor de sort
+      getAllProducts = await getProducts(sort);
+    } else {
+      // Si no se proporciona el parámetro de ordenamiento, utiliza la función getProducts sin ningún parámetro
+      getAllProducts = await getProducts();
+    }
+
     if (name) {
       const products = await byName(name);
       if (products) return res.status(200).json(products);
     }
-    res.status(200).json(getAllProducts);
+
+    // Construye el objeto de filtros para aplicar en la función getProducts
+    const filters = {};
+    if (type) {
+      filters.type = type;
+    }
+    if (brand) {
+      filters.brand = brand;
+    }
+
+    // Aplica los filtros en la función getProducts y obtiene los productos filtrados
+    const filteredProducts = await getProducts(sort, filters);
+
+    res.status(200).json(filteredProducts);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -76,9 +137,9 @@ productRouter.post("/", async (req, res) => {
 
 //////////////////////////////////////////////// PUT ACTIVE PRODUCT /////////////////////////////////////////////////
 
-productRouter.put("/:id/active", async (req, res) => {
+productRouter.put("/:id/", async (req, res) => {
   const id = req.params.id;
-  const { name, imagen, size, price, active } = req.body;
+  const { name, imagen, size, price, active, id_type, id_brand } = req.body;
 
   try {
     const product = await upDateActive(id, {
@@ -87,6 +148,8 @@ productRouter.put("/:id/active", async (req, res) => {
       size,
       price,
       active,
+      id_type,
+      id_brand
     });
     if (product) return res.status(200).json(product);
   } catch (error) {
