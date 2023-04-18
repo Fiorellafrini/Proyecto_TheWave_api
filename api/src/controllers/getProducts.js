@@ -13,6 +13,7 @@ const {fn, col} =require ("sequelize")
           imagen: product.imagen,
           size: product.size,
           price: product.price,
+          description: product.description,
           id_type: product.type_id,
           id_brand: product.brands_id
         },
