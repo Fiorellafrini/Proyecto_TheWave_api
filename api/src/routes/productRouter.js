@@ -59,8 +59,10 @@ productRouter.get("/:id", async (req, res) => {
 //   }
 // });
 productRouter.get("/", async (req, res) => {
+  // http://localhost:3001/product?sort=priceDesc&type=1&nameDesc(con esto hacen las combinaciones como quieren en el insomnia)
+  // http://localhost:3001/product?sort=priceAsc&brand=1
   try {
-    const { name, page = 0, size = 5, sort, type, brand } = req.query; // Obtén los valores de los parámetros de la URL
+    const { name, page = 0, size = 5, sort, type, brand } = req.query; //  parámetros de la URL
 
     if (page && size) {
       let options = {
@@ -99,7 +101,7 @@ productRouter.get("/", async (req, res) => {
       filters.brand = brand;
     }
 
-    // Aplica los filtros en la función getProducts y obtén los productos filtrados
+    // Aplica los filtros en la función getProducts y obtiene los productos filtrados
     const filteredProducts = await getProducts(sort, filters);
 
     res.status(200).json(filteredProducts);
