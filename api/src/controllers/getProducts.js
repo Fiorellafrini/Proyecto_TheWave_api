@@ -19,7 +19,7 @@ const getProducts = async () => {
           size: product.size,
           price: product.price,
           id_type: product.type_id,
-          id_brand: product.brands_id,
+          id_brand: product.brands_id
         },
       });
     }
