@@ -3,7 +3,7 @@ const { Product } = require("../db");
 
 
     const upDateActive = async (id, body) => {
-        const { name, imagen, size, price } = body;
+        const { name, imagen, size, price, id_type, id_brand } = body;
       
         try {
            
@@ -11,7 +11,7 @@ const { Product } = require("../db");
         
             
             if (product) {
-              await product.update({ name, imagen, size, price, active: body.active });
+              await product.update({ name, imagen, size, price,id_type, id_brand, active: body.active });
               return product;
             } else {
                 throw new Error('The specified product was not found');
