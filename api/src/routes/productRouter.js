@@ -135,7 +135,7 @@ productRouter.post("/", async (req, res) => {
 
 //////////////////////////////////////////////// PUT ACTIVE PRODUCT /////////////////////////////////////////////////
 
-productRouter.put("/:id/active", async (req, res) => {
+productRouter.put("/:id/", async (req, res) => {
   const id = req.params.id;
   const { name, imagen, size, price, active } = req.body;
 
