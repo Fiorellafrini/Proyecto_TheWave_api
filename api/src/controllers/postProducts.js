@@ -2,7 +2,7 @@ const { Product, Type, Brand } = require("../db");
 
 const postProducts = async (product) => {
   try {
-    const { name, imagen, size, price, type, brand, description } = product;
+    const { name, imagen, size, price, id_type, id_brand, description } = product;
     if (!name && !imagen && !size && !price && !description) {
       throw new Error("Missing Information");
     }

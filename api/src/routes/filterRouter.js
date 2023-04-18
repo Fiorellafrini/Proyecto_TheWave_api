@@ -2,10 +2,6 @@ const { Router } = require("express");
 const filterRouter = Router();
 const { Product, Type, Brand } = require("../db");
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 27bbe73b511ed747a2471417ee94c99e5688ff26
 filterRouter.get("/type/:id_type", async (req, res) => {
   try {
     const products = await Product.findAll({
@@ -20,11 +16,8 @@ filterRouter.get("/type/:id_type", async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 27bbe73b511ed747a2471417ee94c99e5688ff26
 filterRouter.get("/brands/:id_brand", async (req, res) => {
   try {
     const product = await Product.findAll({
