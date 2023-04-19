@@ -31,7 +31,7 @@ const getProducts = require("./src/controllers/getProducts.js");
     
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(async () => {
+conn.sync({ alter: true }).then(async () => {
     server.listen(3001, () => {
   // conn.sync({ force: false }).then(() => {
   //   server.listen(3001, async() => {

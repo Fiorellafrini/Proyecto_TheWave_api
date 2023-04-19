@@ -1,4 +1,5 @@
 const { Product, Type, Brand } = require("../db");
+const User = require("../db.js")
 
 const postProducts = async (product) => {
   try {
@@ -20,7 +21,7 @@ const postProducts = async (product) => {
     const brands = await Brand.findOne({where: {id_brand:id_brand}});
     newProduct.setType(types);
     newProduct.setBrand(brands);
-  return "exito al crear el producto"
+  return "exito"
   }
   catch (error) {
     return error.message;
