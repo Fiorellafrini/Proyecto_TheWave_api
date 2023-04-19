@@ -6,8 +6,8 @@ let data = [
     price: "17500",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1jHgdJj1dvQClSBFn010CVjTFYiiqr5ug",
-      "https://drive.google.com/uc?export=view&id=1Die5G7_OdKM1Gi6XGdrwVyPNAy_quaql",
+      "https://res.cloudinary.com/djngalumm/image/upload/v1681861259/images/uc_sdg2h8.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/v1681863884/images/uc_wzegwu.png",
     ],
     name: "Tabla de Stand Up Paddle Vesl-3569",
     description:
@@ -20,8 +20,8 @@ let data = [
     price: "12000",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1tcouqSpUGlKTh0ueqGyaF15cZ3HkIT5l",
-      "https://drive.google.com/uc?export=view&id=16-FRC2dOr1gb6WB8s6_NiI7zZpm3sPYd",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871131/images/uc_idlwqv.png",
+      // "https://drive.google.com/uc?export=view&id=16-FRC2dOr1gb6WB8s6_NiI7zZpm3sPYd",
     ],
     name: "Tabla de Stand Up Paddle Vesl-2507",
     description:
@@ -34,8 +34,8 @@ let data = [
     price: "25500",
     user_id: "",
     imagen: [
-      "https://drive.google.com/file/d/1g2srQGwGgtGL8bX4Pacax7UcHuVEsaKi/view?usp=sharing",
-      "https://drive.google.com/uc?export=view&id=12T_xvzYjH_gSq-CKjPFYtkQq4HpH-Tok",
+      // "https://drive.google.com/file/d/1g2srQGwGgtGL8bX4Pacax7UcHuVEsaKi/view?usp=sharing",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871482/images/uc_dmubfm.png",
     ],
     name: "Tabla de Stand Up Paddle Vesl-1559",
     description:
@@ -48,8 +48,8 @@ let data = [
     price: "10500",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1e3Bbf5Ck073tvQK_7gQ_5IFrZcwwAcbM",
-      "https://drive.google.com/uc?export=view&id=1U14TWL4wOCd5b-IxfblarJZ_kRaeRTK5",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871550/images/uc_ofkuo8.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871629/images/uc_vsvd3j.png",
     ],
     name: "Tabla de Stand Up Paddle Vesl-Hunter",
     description:
@@ -62,8 +62,8 @@ let data = [
     price: "10500",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1e3Bbf5Ck073tvQK_7gQ_5IFrZcwwAcbM",
-      "https://drive.google.com/uc?export=view&id=1U14TWL4wOCd5b-IxfblarJZ_kRaeRTK5",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871688/images/uc_b5eesv.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871772/images/uc_cdzw1s.png",
     ],
     name: "Tabla de Stand Up Paddle Vesl-Hunter",
     description:
@@ -76,8 +76,8 @@ let data = [
     price: "22000",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1C783ctCmPNfS7dWqQLevfHJHk3MPHV-t",
-      "https://drive.google.com/uc?export=view&id=1f212jBdGKK1yQ-um1Wc8pYdxUZcbpaqn",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871844/images/uc_mkwnkd.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871900/images/uc_lceuxj.png", // imgaen repetoda
     ],
     name: "Tabla de Surf Russell-Hunter-Hunter v2",
     description:
@@ -90,8 +90,8 @@ let data = [
     price: "17000",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=12ElZMq9D1xOJtT1FDcZQwp7ZeIVI-xPs",
-      "https://drive.google.com/uc?export=view&id=1yDTAY_ux_IIobIslT5hOi-KlsGSbdY8_",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872075/images/uc_hfcfja.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872127/images/uc_s1uel3.png", // repetida
     ],
     name: "Tabla de Surf Hurley-Geometry v1",
     description:
@@ -104,8 +104,8 @@ let data = [
     price: "17000",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1iDiDB5stgHQvDbtGtP-rlMVoP4THtpSn",
-      "https://drive.google.com/uc?export=view&id=1sYhqkjqy5nwKeBRjZfnnl0Y3Qo4o374Q",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872189/images/uc_ph75tx.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872189/images/uc_ph75tx.png", // repetida
     ],
     name: "Tabla de Surf Hurley-Geometry v2",
     description:
@@ -118,8 +118,8 @@ let data = [
     price: "16750",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1eZ01Jh4YzfJ5plWsI7nnwe7od546XzJb",
-      "https://drive.google.com/uc?export=view&id=1iOkOSON8cc1I748nrpoN83rJD-RCmKU2",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872372/images/uc_lvgypx.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872438/images/uc_cps6un.png",
     ],
     name: "Tabla de Surf Hurley-Geometry v3",
     description:
@@ -132,8 +132,8 @@ let data = [
     price: "23750",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1NmwHmIvOJH6e_0xPWv3ophrX9riJezR7",
-      "https://drive.google.com/uc?export=view&id=1x_1JgqwLctBTBuDsO5dYrDkK1Q5F_PPt",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872501/images/uc_xygxlv.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872550/images/uc_hwsurf.png",
     ],
     name: "Tabla de Surf Wave-Freestyle v4",
     description:
@@ -146,8 +146,8 @@ let data = [
     price: "13750",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1s3mh7LeIqxn3BfOr7rZI-Hn54VCpWMPN",
-      "https://drive.google.com/uc?export=view&id=1_xg-Tg9bP4RJPrZLdoghk4FxVNFr6SXp",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872614/images/uc_ylulds.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872682/images/uc_ey1edp.png",
     ],
     name: "Tabla de Surf Wave-Freestyle v1",
     description:
@@ -160,8 +160,8 @@ let data = [
     price: "33750",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1v8X2HD_aSM-f8y4o9yXNwZ1updcfTGFB",
-      "https://drive.google.com/uc?export=view&id=1SGgjKPB1dN8dK-x7jWdfTK2tSGeVzXDH",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872726/images/uc_u3gx3u.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872781/images/uc_icurnu.png",
     ],
     name: "Tabla de Surf JOBE",
     description:
@@ -174,8 +174,8 @@ let data = [
     price: "39050",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1C7Yz_rwFXQP1wmyXbyKt5T93l40RWHkT",
-      "https://drive.google.com/uc?export=view&id=150tqAs99GI0SM2wumcVw4E2KiShmRVxP",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873915/images/uc_uy5xeh.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681874021/images/uc_l5zn3w.png",
     ],
     name: "Tabla de Surf JOBE-Explorer",
     description:
@@ -188,8 +188,8 @@ let data = [
     price: "11750",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1WT9PtCZhwhhvojhBTTH8i2MwhqKxdC54",
-      "https://drive.google.com/uc?export=view&id=1VD__LQ2jRsv8_0fDMKocA-XPSov5cP3U",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873766/images/uc_dle3rs.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873827/images/uc_ddcanw.png",
     ],
     name: "Tabla de Surf Compact-a",
     description:
@@ -202,8 +202,8 @@ let data = [
     price: "9750",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1TTHRlb-BTK22VSe85VEMjiup2iuQb2-F",
-      "https://drive.google.com/uc?export=view&id=16rkaPKryqaw_A__7N2G5q9NdMITgx_3r",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873627/images/uc_jfxuui.png",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873692/images/uc_lbepju.png",
     ],
     name: "Tabla de WakeBoard SungShot-Blue",
     description:
@@ -216,7 +216,7 @@ let data = [
     price: "8000",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1xFGKXnQYnZ7X-WcPKz2Y3bsd6STsgguE",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873582/images/uc_ihmd5t.png",
     ],
     name: "Traje De Neopreno Billabong Mujer - Negro",
     description:
@@ -229,7 +229,7 @@ let data = [
     price: "11000",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1VD5fREGersRGdkW5hF1ev_O7uXfHe-Dg",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873477/images/uc_py4sgp.png",
     ],
     name: "Traje De Neopreno Billabong Tormenta Hombre - Negro",
     description:
@@ -242,7 +242,7 @@ let data = [
     price: "16400",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1C5WRVR-uTRZx1BmQILzFd2Whc4v9AOql",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873398/images/uc_het9tr.png",
     ],
     name: "Traje De Neopreno Gill Zenlite  - Azul",
     description:
@@ -255,7 +255,7 @@ let data = [
     price: "13000",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1yHn_TJME8Xdj7iCLNJDYxXWOrCGsZ0Sf",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873311/images/uc_clytzf.png",
     ],
     name: "Femenino Orca Synergy - Azul Salvaje",
     description:
@@ -268,7 +268,7 @@ let data = [
     price: "11150",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1ALYDNp5_FqQp5IgV-S6EcqqwzQrsyz86",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873235/images/uc_vaeqrt.png",
     ],
     name: "O'neill Traje De Neopreno Hombre Hammer 2mm - Pizarra / Negro",
     description:
@@ -281,7 +281,7 @@ let data = [
     price: "10000",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1C5WRVR-uTRZx1BmQILzFd2Whc4v9AOql",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873159/images/uc_xcbgyv.png",
     ],
     name: "O'neill Hombres Atlanta 2mm Back Zip Traje De Neopreno - Negro-Azul",
     description:
@@ -294,7 +294,7 @@ let data = [
     price: "7500",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1Vi6PSAqUw9YSz7HCD0DitCAfKaaUzCNO",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873078/images/uc_psmcl3.png",
     ],
     name: "Powerjet - Aletas de buceo - Powerjet ",
     description:
@@ -307,7 +307,7 @@ let data = [
     price: "6500",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1pKb_yGQ6LezPK1cSBeoN9yWO_Zzaf9C7",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873025/images/uc_ux5k9f.png",
     ],
     name: "Aletas Buceo Mundial One 50 Fin",
     description:
@@ -320,7 +320,7 @@ let data = [
     price: "6500",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=14ojSwP2dOa_-k918jBC6FTwcu6IZrc8u",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872961/images/uc_xph6wq.png",
     ],
     name: "Aletas de Buceo apnea Mundial One",
     description:
@@ -333,7 +333,7 @@ let data = [
     price: "9000",
     user_id: "",
     imagen: [
-      "https://drive.google.com/uc?export=view&id=1e87VjnkVR5z52iMznG0T4YTKAVLyWcNH",
+      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872910/images/uc_p4w6vo.png",
     ],
     name: "Powerjet - Aletas de buceo - Bare",
     description:
