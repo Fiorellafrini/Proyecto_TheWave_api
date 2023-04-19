@@ -4,6 +4,7 @@ const { Product } = require("../db");
 
     const upDateActive = async (id, body) => {
         const { name, imagen, size, price, description, id_type, id_brand } = body;
+
       
         try {
            
@@ -11,7 +12,11 @@ const { Product } = require("../db");
         
             
             if (product) {
-              await product.update({ name, imagen, size, price, description, id_type, id_brand, active: body.active });
+<<<<<<<<< Temporary merge branch 1
+              await product.update({ name, imagen, size, price,description, active: body.active });
+=========
+              await product.update({ name, imagen, size, price,id_type, id_brand, active: body.active });
+>>>>>>>>> Temporary merge branch 2
               return product;
             } else {
                 throw new Error('The specified product was not found');
