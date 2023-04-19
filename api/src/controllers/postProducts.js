@@ -15,6 +15,7 @@ const postProducts = async (product) => {
       imagen,
       size,
       price,
+      description,
       id_type,
       id_brand
 
