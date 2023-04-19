@@ -22,12 +22,12 @@ const { conn } = require("./src/db.js");
 const getBrands  = require("./src/controllers/getBrands.js");
 const  getType = require("./src/controllers/getType.js");
 const getProducts = require("./src/controllers/getProducts.js");
-const {PORT} = process.env
+const port = process.env.PORT || 3001;
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(async () => {
-  server.listen(PORT, () => {
-    console.log('%s listening at', process.env.PORT)
+conn.sync({ force: false }).then(async () => {
+  server.listen(port, () => {
+    console.log(`%s listening at, process.env ${port}`)
     // console.log("Api listening on http://localhost:3001"); // eslint-disable-line no-console
   });
   await getType();
