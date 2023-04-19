@@ -3,11 +3,15 @@ const User = require("../db.js")
 
 const postProducts = async (product) => {
   try {
-    const { name, imagen, size, price, id_type, id_brand, description } = product;
-    if (!name && !imagen && !size && !price && !description) {
+
+    let { name, imagen, size, price, description,id_type, id_brand } = product;
+    if (!name && !imagen && !size && !price ) {
       throw new Error("Missing Information");
     }
-    const newProduct = await Product.create({
+    id_type = parseInt(id_type);
+    id_brand = parseInt(id_brand);
+    
+      const newProduct = await Product.create({
       name,
       imagen,
       size,
