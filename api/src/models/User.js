@@ -4,6 +4,11 @@ module.exports = (sequelize) => {
   sequelize.define(
     "User",
     {
+      id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        defaultValue: DataTypes.UUIDV4,
+      },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -12,7 +17,6 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-
       email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -20,6 +24,16 @@ module.exports = (sequelize) => {
         validate: {
           isEmail: true,
         },
+      },
+      password:{
+      type: DataTypes.STRING,
+      },
+      phone:{
+        type: DataTypes.STRING,
+        unique: true,
+      },
+      address:{
+        type: DataTypes.STRING,
       },
       admin: {
         type: DataTypes.BOOLEAN,
