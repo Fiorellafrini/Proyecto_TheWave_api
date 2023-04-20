@@ -11,7 +11,7 @@ let data = [
     ],
     name: "Tabla de Stand Up Paddle Vesl-3569",
     description:
-      "Esta tabla de stand up paddle de la marca Vesl es ideal para usuarios de nivel intermedio.Esta tabla ofrece una gran estabilidad y maniobrabilidad en el agua.",
+    "This Vesl stand-up paddleboard is ideal for intermediate users. It offers great stability and maneuverability in the water."
   },
   {
     brands_id: 3,
@@ -25,7 +25,7 @@ let data = [
     ],
     name: "Tabla de Stand Up Paddle Vesl-2507",
     description:
-      "esta tabla de stand up paddle es perfecta para usuarios principiantes. Su construcción de alta calidad garantiza una gran estabilidad y flotabilidad en el agua.",
+    "This stand up paddle board is perfect for beginner users. Its high-quality construction ensures great stability and buoyancy in the water."
   },
   {
     brands_id: 3,
@@ -34,8 +34,9 @@ let data = [
     price: "25500",
     user_id: "",
     imagen: [
-      // "https://drive.google.com/file/d/1g2srQGwGgtGL8bX4Pacax7UcHuVEsaKi/view?usp=sharing",
+      // https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681876652/images/images_lr4qia.jpg",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871482/images/uc_dmubfm.png",
+      
     ],
     name: "Tabla de Stand Up Paddle Vesl-1559",
     description:
