@@ -260,7 +260,7 @@ let data = [
     ],
     name: "Orca Synergy Women's Wetsuit - Wild Blue",
     description:
-      "Si eres una mujer que ama las actividades acuáticas, el traje de neopreno Orca Synergy es una excelente opción. Con una construcción de neopreno de 3mm y un diseño ajustado, te mantendrá caliente y cómoda en el agua.",
+    "If you are a woman who loves water activities, the Orca Synergy wetsuit is an excellent choice. With a 3mm neoprene construction and a snug design, it will keep you warm and comfortable in the water.",
   },
   {
     brands_id: 10,
@@ -273,7 +273,7 @@ let data = [
     ],
     name: "O'neill Men's Hammer 2mm Wetsuit - Slate / Black",
     description:
-      "este traje de neopreno de O'neill es perfecto para hombres que buscan un modelo duradero y cómodo para actividades acuáticas como el surf y el paddle boarding. Con una construcción de neopreno de 2mm y un diseño ajustado, te mantendrá cómodo y protegido en el agua.",
+    "This O'neill wetsuit is perfect for men looking for a durable and comfortable option for water activities such as surfing and paddle boarding. With a 2mm neoprene construction and a snug design, it will keep you comfortable and protected in the water.",
   },
   {
     brands_id: 10,
@@ -286,7 +286,7 @@ let data = [
     ],
     name: "O'neill Mens Atlanta 2mm Back Zip Wetsuit - Black-Blue",
     description:
-      "Si buscas un traje de neopreno duradero y cómodo para actividades acuáticas como el surf y el paddle boarding, el modelo Atlanta de O'neill es una excelente opción. Con una construcción de neopreno de 2mm y un diseño ajustado, te mantendrá cómodo y protegido en el agua.",
+    "If you are looking for a durable and comfortable wetsuit for water activities such as surfing and paddleboarding, the O'Neill Atlanta model is an excellent choice. With a 2mm neoprene construction and a snug design, it will keep you comfortable and protected in the water.",
   },
   {
     brands_id: 13,
@@ -299,7 +299,7 @@ let data = [
     ],
     name: "Diving Fins - Powerjet",
     description:
-      "Estas aletas de buceo de Powerjet son perfectas para los buceadores que buscan una opción duradera y eficiente. Con un diseño ergonómico y una construcción resistente, te ayudarán a desplazarte con facilidad en el agua.",
+    "These Powerjet diving fins are perfect for divers looking for a durable and efficient option. With an ergonomic design and a sturdy construction, they will help you move easily through the water.",
   },
   {
     brands_id: 14,
@@ -312,7 +312,7 @@ let data = [
     ],
     name: "Diving Fins World One 50",
     description:
-      "Las aletas de buceo Mundial One 50 Fin son una excelente opción para los buceadores que buscan un modelo resistente y cómodo. Con un diseño ergonómico y una construcción de alta calidad, te ayudarán a desplazarte con facilidad en el agua.",
+    "The Mundial One 50 Fin diving fins are an excellent choice for divers seeking a durable and comfortable option. With an ergonomic design and high-quality construction, they will help you move easily through the water.",
   },
   {
     brands_id: 14,
