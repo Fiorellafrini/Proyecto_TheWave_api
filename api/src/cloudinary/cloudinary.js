@@ -4,10 +4,11 @@ const { Product } = require('../db')
 
 // Configuration 
 cloudinary.config({
-  cloud_name: CLOUD_NAME,
-  api_key: API_KEY,
-  api_secret: API_SECRET
+  cloud_name: "djngalumm",
+  api_key: "897654326791657",
+  api_secret:"UfU4nbhH4-ud3S3bYVrv-U4lICo"
 });
+
 
 
 // Upload
@@ -26,7 +27,7 @@ cloudinary.config({
 
  // Reemplaza esta importación con la ruta correcta a tu modelo Product
 
-// async function uploadImages(req, res) {
+// async function uploadImages(req, res) {s
 //   try {
 //     // Sube la imagen a Cloudinary
 //     const result = await cloudinary.uploader.upload(req.file.path, { folder: "images" });
