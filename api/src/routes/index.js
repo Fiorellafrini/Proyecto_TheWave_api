@@ -8,7 +8,7 @@ const productRouter = require("./productRouter");
 const orderRouter = require("./orderRouter");
 const filterRouter = require("./filterRouter");
 const brandRouter = require("./brandRouter");
-const authRouter = require("./authRouter");
+// const authRouter = require("./authRouter");
 const router = Router();
 
 // Rutas
@@ -19,7 +19,7 @@ router.use("/product", productRouter);
 // router.use('/Course', courseRouter)
 router.use("/order", orderRouter);
 router.use("/filter", filterRouter);
-router.use("/auth", authRouter);
+// router.use("/auth", authRouter);
 router.use("/brand", brandRouter);
 
 module.exports = router;
