@@ -208,7 +208,7 @@ let data = [
     ],
     name: "WakeBoard SungShot-Blue",
     description:
-      "La tabla de wakeboard SungShot-Blue es perfecta para aquellos que quieren experimentar la emoción de realizar acrobacias y trucos en el agua. Su tamaño es ideal para un mayor control y maniobrabilidad, lo que la hace adecuada tanto para principiantes como para expertos en wakeboard. Su diseño con aletas múltiples permite una mayor estabilidad y control en el agua, lo que te permitirá realizar tus trucos con mayor confianza.",
+    "The SungShot-Blue wakeboard is perfect for those who want to experience the thrill of performing stunts and tricks on the water. Its size is ideal for greater control and maneuverability, making it suitable for both beginners and expert wakeboarders. Its multiple fin design allows for greater stability and control on the water, enabling you to perform your tricks with greater confidence.",
   },
   {
     brands_id: 9,
@@ -221,7 +221,7 @@ let data = [
     ],
     name: "Billabong Womens Wetsuit - Black",
     description:
-      "Este traje de neopreno de Billabong para mujer en color negro es perfecto para actividades acuáticas como el surf, el paddle boarding o el buceo. Hecho con materiales de alta calidad, te mantendrá caliente y cómoda en el agua, mientras te protege de los rayos UV",
+    "This Billabong wetsuit for women in black is perfect for water activities such as surfing, paddle boarding, or diving. Made with high-quality materials, it will keep you warm and comfortable in the water while protecting you from UV rays.",
   },
   {
     brands_id: 9,
@@ -234,7 +234,7 @@ let data = [
     ],
     name: "Billabong Men's Storm Wetsuit - Black",
     description:
-      "Si buscas un traje de neopreno de alta calidad para hombres, este modelo de Billabong es una excelente opción. Diseñado para soportar los climas más fríos, es perfecto para actividades como el surf y el paddle boarding.",
+    "If you're looking for a high-quality wetsuit for men, this Billabong model is an excellent choice. Designed to withstand the coldest climates, it is perfect for activities such as surfing and paddleboarding.",
   },
   {
     brands_id: 12,
@@ -247,7 +247,7 @@ let data = [
     ],
     name: "Gill Zenlite Wetsuit - Blue",
     description:
-      "El traje de neopreno Gill Zenlite es una opción de alta calidad para los buceadores más experimentados. Con un diseño ajustado y una construcción de neopreno de 3mm, te mantendrá caliente y cómodo en aguas frías.",
+    "The Gill Zenlite wetsuit is a high-quality option for experienced divers. With a tight-fitting design and 3mm neoprene construction, it will keep you warm and comfortable in cold waters.",
   },
   {
     brands_id: 11,
