@@ -6,10 +6,7 @@ const { User } = require("../db");
         const { name,lastName,email } = body;
       
         try {
-           
             const user = await User.findOne({ where: { id } });
-        
-            
             if (user) {
               await user.update({ name,lastName,email, active: body.active });
               return user;
