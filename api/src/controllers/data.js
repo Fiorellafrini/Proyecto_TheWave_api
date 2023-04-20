@@ -325,7 +325,7 @@ let data = [
     ],
     name: "Diving fins Mundial One",
     description:
-      "Si eres un apneísta que busca una opción duradera y eficiente, estas aletas de buceo de Mundial One son una excelente opción. Con un diseño ergonómico y una construcción resistente, te ayudarán a desplazarte con facilidad en el",
+    "If you are a freediver looking for a durable and efficient option, these Mundial One diving fins are an excellent choice. With an ergonomic design and a sturdy construction, they will help you move easily in the water.",
   },
   {
     brands_id: 13,
@@ -338,7 +338,7 @@ let data = [
     ],
     name: "Diving fins - Nude - Powerjet",
     description:
-      "Estas aletas de buceo de la marca Bare, modelo Powerjet, son ideales para cualquier tipo de buceo. Con un diseño aerodinámico y una estructura de alta resistencia, estas aletas proporcionan una gran propulsión en el agua, permitiendo al buceador desplazarse con facilidad y rapidez",
+    "These Bare Powerjet diving fins are ideal for any type of diving. With an aerodynamic design and a high-strength structure, these fins provide great propulsion in the water, allowing the diver to move with ease and speed.",
   },
 ];
 module.exports = { data };
