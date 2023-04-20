@@ -40,7 +40,7 @@ let data = [
     ],
     name: "Stand Up Paddle Board Vesl-1559",
     description:
-      "Si eres un usuario avanzado que busca una tabla de stand up paddle de alta calidad, esta es una gran opción. Esta tabla de la marca Vesl ofrece un excelente rendimiento en el agua, gracias a su construcción resistente y diseño innovador.",
+    "If you are an advanced user looking for a high-quality stand-up paddleboard, this is a great option. This board from Vesl brand offers excellent performance on the water, thanks to its sturdy construction and innovative design.",
   },
   {
     brands_id: 3,
@@ -54,7 +54,7 @@ let data = [
     ],
     name: "Stand Up Paddle Board Vesl-Hunter",
     description:
-      "Si eres un usuario avanzado que busca una tabla de stand up paddle de alta calidad, esta es una gran opción. Esta tabla de la marca Vesl ofrece un excelente rendimiento en el agua, gracias a su construcción resistente y diseño innovador.",
+    "If you are an advanced user looking for a high-quality stand up paddle board, this is a great option. This board from the brand Vesl offers excellent performance on the water, thanks to its sturdy construction and innovative design.",
   },
   {
     brands_id: 3,
@@ -68,7 +68,7 @@ let data = [
     ],
     name: "Stand Up Paddle Board Vesl-Hunter",
     description:
-      "La tabla de Stand Up Paddle Vesl-Hunter es la opción perfecta para aquellos que buscan aventurarse en el mundo del paddle surf. Con una construcción resistente y duradera, esta tabla proporciona una excelente estabilidad y maniobrabilidad en el agua. Además, su diseño moderno y llamativo la convierte en la elección ideal para aquellos que buscan destacar en el mar. ¡Adquiere la tuya y comienza a explorar nuevas rutas acuáticas con estilo!",
+    "The Vesl-Hunter Stand Up Paddleboard is the perfect choice for those looking to venture into the world of paddle surfing. With a sturdy and durable construction, this board provides excellent stability and maneuverability on the water. Additionally, its modern and eye-catching design makes it the ideal choice for those looking to stand out in the sea. Get yours now and start exploring new water routes in style!",
   },
   {
     brands_id: 4,
@@ -82,7 +82,7 @@ let data = [
     ],
     name: "Surfboard Russell-Hunter-Hunter v2",
     description:
-      "Disfruta de la adrenalina en el agua con la tabla de surf Russell-Hunter-Hunter v2. Diseñada para olas medianas a grandes, esta tabla brinda la estabilidad y maniobrabilidad que necesitas para desafiar las olas más desafiantes.",
+    "Experience the thrill of the water with the Russell-Hunter-Hunter v2 surfboard. Designed for medium to large waves, this board provides the stability and maneuverability you need to take on the most challenging swells.",
   },
   {
     brands_id: 1,
