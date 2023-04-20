@@ -96,7 +96,7 @@ let data = [
     ],
     name: "Surfboard Hurley-Geometry v1",
     description:
-      "esta tabla es perfecta para olas medianas y pequeñas. La combinación de materiales duraderos y un diseño funcional te permitirán mejorar tus habilidades en el agua.",
+    "This board is perfect for small to medium-sized waves. The combination of durable materials and a functional design will allow you to improve your skills in the water.",
   },
   {
     brands_id: 1,
@@ -110,7 +110,7 @@ let data = [
     ],
     name: "Surfboard Hurley-Geometry v2",
     description:
-      "Con la tabla de surf Hurley-Geometry v2 podrás conquistar el mar en estilo. Esta diseñada para surfistas de nivel intermedio a avanzado, y es perfecta para olas medianas y grandes. Disfruta de la estabilidad y velocidad que necesitas para superar tus límites y llevar tu surf al siguiente nivel.",
+    "Conquer the sea in style with the Hurley-Geometry v2 surfboard. Designed for intermediate to advanced surfers, this board is perfect for medium to large waves. Enjoy the stability and speed you need to push your limits and take your surfing to the next level.",
   },
   {
     brands_id: 1,
@@ -124,7 +124,7 @@ let data = [
     ],
     name: "Surfboard Hurley-Geometry v3",
     description:
-      "Tabla de surf ideal para riders de nivel intermedio y avanzado. Su diseño permite una mayor maniobrabilidad en olas grandes y fuertes, gracias a su configuración de quillas y su cóncavo profundo en la parte inferior.",
+    "Designed for intermediate and advanced riders, this surfboard offers greater maneuverability in big and strong waves, thanks to its fin configuration and deep concave on the underside."
   },
   {
     brands_id: 5,
