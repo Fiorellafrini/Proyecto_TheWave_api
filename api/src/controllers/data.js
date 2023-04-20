@@ -138,7 +138,7 @@ let data = [
     ],
     name: "Surfboard Wave-Freestyle v4",
     description:
-      "Tabla de surf perfecta para riders que buscan un equilibrio entre velocidad y maniobrabilidad. Su forma plana y su sistema de quillas proporcionan una mayor estabilidad y control en olas pequeñas y medianas, mientras que su diseño de tail en swallow tail permite un mayor agarre en olas más grandes y poderosas.",
+    "This surfboard is perfect for riders seeking a balance between speed and maneuverability. Its flat shape and fin system provide greater stability and control in small and medium waves, while its swallow tail design allows for greater grip in larger and more powerful waves.",
   },
   {
     brands_id: 5,
@@ -152,7 +152,7 @@ let data = [
     ],
     name: "Surfboard Wave-Freestyle v1",
     description:
-      "La tabla de surf Wave-Freestyle v1 es una excelente opción para aquellos que buscan un alto rendimiento en el agua. Con su diseño versátil, esta tabla permite realizar maniobras radicales con facilidad, manteniendo la estabilidad en todo momento.",
+    "The Wave-Freestyle v1 surfboard is an excellent choice for those seeking high performance in the water. With its versatile design, this board allows for easy execution of radical maneuvers while maintaining stability at all times.",
   },
   {
     brands_id: 6,
@@ -166,7 +166,7 @@ let data = [
     ],
     name: "Surfboard JOBE",
     description:
-      "La tabla de surf JOBE es una excelente opción para aquellos que buscan un alto rendimiento en el agua. Con su diseño versátil, esta tabla permite realizar maniobras radicales con facilidad, manteniendo la estabilidad en todo momento.",
+    "The JOBE surfboard is an excellent option for those seeking high performance in the water. With its versatile design, this board allows for radical maneuvers with ease while maintaining stability at all times.",
   },
   {
     brands_id: 6,
@@ -180,7 +180,7 @@ let data = [
     ],
     name: "Surfboard JOBE-Explorer",
     description:
-      "La tabla de surf JOBE-Explorer es una excelente opción para aquellos que buscan un alto rendimiento en el agua. Con su diseño versátil, esta tabla permite realizar maniobras radicales con facilidad, manteniendo la estabilidad en todo momento.",
+    "The JOBE-Explorer surfboard is an excellent option for those seeking high performance on the water. With its versatile design, this board allows for easy execution of radical maneuvers while maintaining stability at all times.",
   },
   {
     brands_id: 7,
@@ -194,7 +194,7 @@ let data = [
     ],
     name: "Surfboard Compact-a",
     description:
-      "La tabla de surf Compact-a es ideal para surfistas que buscan un alto rendimiento en olas grandes. Su diseño moderno y estilizado permite una excelente maniobrabilidad y velocidad, gracias a su forma y estructura. Además, su tamaño proporciona una gran estabilidad y seguridad en condiciones de surf extremas.",
+    "The Compact-a surfboard is ideal for surfers seeking high performance in big waves. Its modern and sleek design allows for excellent maneuverability and speed, thanks to its shape and structure. Additionally, its size provides great stability and safety in extreme surf conditions.",
   },
   {
     brands_id: 8,
