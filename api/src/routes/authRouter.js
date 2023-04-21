@@ -3,6 +3,7 @@ const { User } = require("../db.js");
 const jwt = require("jsonwebtoken");
 const { passport, authenticate } = require("../passport.js");
 const router = Router();
+
 router.post("/", passport.authenticate("local"), (req, res) => {
   try {
     let user = req.user;
@@ -16,21 +17,14 @@ router.post("/", passport.authenticate("local"), (req, res) => {
     const token = jwt.sign(payload, "contraseña ", {
       expiresIn: "1d",
     });
-    res.status(200).json(token);
+    res.status(200).json(token,payload);
   } catch (error) {
     res.status(500).json({ error: "Ha ocurrido un error." });
   }
 });
-router.get(
-  "/auth/google",
-  passport.authenticate(
-    "google",
-    { scope: ["email", "profile"] },
-    {
-      session: false,
-    }
-  ),
-  (req, res) => {
+
+router.get("/google",passport.authenticate("google",
+{ scope: ["email", "profile"] },{session: false, }),(req, res) => {
     const user = req.user;
     payload = {
       id: user.id,
@@ -50,13 +44,14 @@ router.get(
   passport.authenticate("google", { failureRedirect: "/auth/failure" }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect("/");
+    // res.redirect("/");
+    res.json(req.token)
   }
 );
-router.get("/auth/facebook", passport.authenticate("facebook"));
+router.get("/facebook", passport.authenticate("facebook"));
 
 router.get(
-  "/auth/facebook/callback",
+  "/facebook/callback",
   passport.authenticate(
     "facebook",
     { scope: ["email"] },

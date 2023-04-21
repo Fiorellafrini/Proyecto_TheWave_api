@@ -19,6 +19,8 @@ transporter.verify().then(() => {
   }).catch((err) => {
     console.log(err.message);
   });
+
+  
 module.exports = {
     transporter
 };

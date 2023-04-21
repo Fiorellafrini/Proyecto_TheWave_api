@@ -1,6 +1,8 @@
 const { User } = require("../db");
 const bcrypt = require("bcrypt");
-const transporter = require("../nodemailer/nodemailer.js");
+
+
+
 const postUser = async (user) => {
   const {
     name,
@@ -45,14 +47,6 @@ const postUser = async (user) => {
       address,
       phone,
     });
-        // await transporter.sendMail({
-        //   from: '"The Whave" <pfthewhave@gmail.com>', // sender address
-        //   to: email, // list of receivers
-        //   subject: `usuario creado `, // Subject line
-        //   html: `<p> Hola, ${name}! <p> Te informamos que acabas de publicar un producto con el nombre . Para ver la publicación, haz clic en el siguiente enlace:</p> 
-        // <p>http://localhost:3000/products/${newUser.id}</p>
-        // `, // html body
-        // });
     return "The user has been created successfully";
   }
 };
