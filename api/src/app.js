@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const routes = require("./routes/index.js");
 const passport = require("passport");
+const mercadopago = require("mercadopago");
+const { ACCESS_TOKEN } = process.env;
 
 require("./db.js");
 
@@ -35,6 +37,9 @@ app.use(
 );
 app.use(passport.initialize());
 app.use("/", routes);
+mercadopago.configure({
+  access_token: ACCESS_TOKEN,
+});
 
 // Error catching endware.
 app.use((err, req, res, next) => {
