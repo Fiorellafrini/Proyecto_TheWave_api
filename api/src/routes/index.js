@@ -9,6 +9,7 @@ const orderRouter = require("./orderRouter");
 const filterRouter = require("./filterRouter");
 const brandRouter = require("./brandRouter");
 const authRouter = require("./authRouter");
+const paymentsRouter = require("./PaymentRouter");
 const router = Router();
 
 // Rutas
@@ -21,5 +22,7 @@ router.use("/order", orderRouter);
 router.use("/filter", filterRouter);
 router.use("/auth", authRouter);
 router.use("/brand", brandRouter);
+//mercadoPago
+router.use("/payment", paymentsRouter);
 
 module.exports = router;
