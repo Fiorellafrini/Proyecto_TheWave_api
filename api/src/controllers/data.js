@@ -9,9 +9,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/v1681861259/images/uc_sdg2h8.png",
       "https://res.cloudinary.com/djngalumm/image/upload/v1681863884/images/uc_wzegwu.png",
     ],
-    name: "Tabla de Stand Up Paddle Vesl-3569",
+    name: "Stand Up Paddle Board Vesl-3569",
+    stock: 10,
     description:
-      "Esta tabla de stand up paddle de la marca Vesl es ideal para usuarios de nivel intermedio.Esta tabla ofrece una gran estabilidad y maniobrabilidad en el agua.",
+      "This Vesl stand-up paddleboard is ideal for intermediate users. It offers great stability and maneuverability in the water.",
   },
   {
     brands_id: 3,
@@ -23,9 +24,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871131/images/uc_idlwqv.png",
       // "https://drive.google.com/uc?export=view&id=16-FRC2dOr1gb6WB8s6_NiI7zZpm3sPYd",
     ],
-    name: "Tabla de Stand Up Paddle Vesl-2507",
+    name: "Stand Up Paddle Board Vesl-2507",
+    stock: 10,
     description:
-      "esta tabla de stand up paddle es perfecta para usuarios principiantes. Su construcción de alta calidad garantiza una gran estabilidad y flotabilidad en el agua.",
+      "This stand up paddle board is perfect for beginner users. Its high-quality construction ensures great stability and buoyancy in the water.",
   },
   {
     brands_id: 3,
@@ -34,12 +36,13 @@ let data = [
     price: "25500",
     user_id: "",
     imagen: [
-      // "https://drive.google.com/file/d/1g2srQGwGgtGL8bX4Pacax7UcHuVEsaKi/view?usp=sharing",
+      // https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681876652/images/images_lr4qia.jpg",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871482/images/uc_dmubfm.png",
     ],
-    name: "Tabla de Stand Up Paddle Vesl-1559",
+    name: "Stand Up Paddle Board Vesl-1559",
+    stock: 10,
     description:
-      "Si eres un usuario avanzado que busca una tabla de stand up paddle de alta calidad, esta es una gran opción. Esta tabla de la marca Vesl ofrece un excelente rendimiento en el agua, gracias a su construcción resistente y diseño innovador.",
+      "If you are an advanced user looking for a high-quality stand-up paddleboard, this is a great option. This board from Vesl brand offers excellent performance on the water, thanks to its sturdy construction and innovative design.",
   },
   {
     brands_id: 3,
@@ -51,9 +54,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871550/images/uc_ofkuo8.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871629/images/uc_vsvd3j.png",
     ],
-    name: "Tabla de Stand Up Paddle Vesl-Hunter",
+    name: "Stand Up Paddle Board Vesl-Hunter",
+    stock: 10,
     description:
-      "Si eres un usuario avanzado que busca una tabla de stand up paddle de alta calidad, esta es una gran opción. Esta tabla de la marca Vesl ofrece un excelente rendimiento en el agua, gracias a su construcción resistente y diseño innovador.",
+      "If you are an advanced user looking for a high-quality stand up paddle board, this is a great option. This board from the brand Vesl offers excellent performance on the water, thanks to its sturdy construction and innovative design.",
   },
   {
     brands_id: 3,
@@ -65,9 +69,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871688/images/uc_b5eesv.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871772/images/uc_cdzw1s.png",
     ],
-    name: "Tabla de Stand Up Paddle Vesl-Hunter",
+    name: "Stand Up Paddle Board Vesl-Hunter",
+    stock: 10,
     description:
-      "La tabla de Stand Up Paddle Vesl-Hunter es la opción perfecta para aquellos que buscan aventurarse en el mundo del paddle surf. Con una construcción resistente y duradera, esta tabla proporciona una excelente estabilidad y maniobrabilidad en el agua. Además, su diseño moderno y llamativo la convierte en la elección ideal para aquellos que buscan destacar en el mar. ¡Adquiere la tuya y comienza a explorar nuevas rutas acuáticas con estilo!",
+      "The Vesl-Hunter Stand Up Paddleboard is the perfect choice for those looking to venture into the world of paddle surfing. With a sturdy and durable construction, this board provides excellent stability and maneuverability on the water. Additionally, its modern and eye-catching design makes it the ideal choice for those looking to stand out in the sea. Get yours now and start exploring new water routes in style!",
   },
   {
     brands_id: 4,
@@ -79,9 +84,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871844/images/uc_mkwnkd.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871900/images/uc_lceuxj.png", // imgaen repetoda
     ],
-    name: "Tabla de Surf Russell-Hunter-Hunter v2",
+    name: "Surfboard Russell-Hunter-Hunter v2",
+    stock: 10,
     description:
-      "Disfruta de la adrenalina en el agua con la tabla de surf Russell-Hunter-Hunter v2. Diseñada para olas medianas a grandes, esta tabla brinda la estabilidad y maniobrabilidad que necesitas para desafiar las olas más desafiantes.",
+      "Experience the thrill of the water with the Russell-Hunter-Hunter v2 surfboard. Designed for medium to large waves, this board provides the stability and maneuverability you need to take on the most challenging swells.",
   },
   {
     brands_id: 1,
@@ -93,9 +99,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872075/images/uc_hfcfja.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872127/images/uc_s1uel3.png", // repetida
     ],
-    name: "Tabla de Surf Hurley-Geometry v1",
+    name: "Surfboard Hurley-Geometry v1",
+    stock: 10,
     description:
-      "esta tabla es perfecta para olas medianas y pequeñas. La combinación de materiales duraderos y un diseño funcional te permitirán mejorar tus habilidades en el agua.",
+      "This board is perfect for small to medium-sized waves. The combination of durable materials and a functional design will allow you to improve your skills in the water.",
   },
   {
     brands_id: 1,
@@ -107,9 +114,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872189/images/uc_ph75tx.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872189/images/uc_ph75tx.png", // repetida
     ],
-    name: "Tabla de Surf Hurley-Geometry v2",
+    name: "Surfboard Hurley-Geometry v2",
+    stock: 10,
     description:
-      "Con la tabla de surf Hurley-Geometry v2 podrás conquistar el mar en estilo. Esta diseñada para surfistas de nivel intermedio a avanzado, y es perfecta para olas medianas y grandes. Disfruta de la estabilidad y velocidad que necesitas para superar tus límites y llevar tu surf al siguiente nivel.",
+      "Conquer the sea in style with the Hurley-Geometry v2 surfboard. Designed for intermediate to advanced surfers, this board is perfect for medium to large waves. Enjoy the stability and speed you need to push your limits and take your surfing to the next level.",
   },
   {
     brands_id: 1,
@@ -121,9 +129,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872372/images/uc_lvgypx.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872438/images/uc_cps6un.png",
     ],
-    name: "Tabla de Surf Hurley-Geometry v3",
+    name: "Surfboard Hurley-Geometry v3",
+    stock: 10,
     description:
-      "Tabla de surf ideal para riders de nivel intermedio y avanzado. Su diseño permite una mayor maniobrabilidad en olas grandes y fuertes, gracias a su configuración de quillas y su cóncavo profundo en la parte inferior.",
+      "Designed for intermediate and advanced riders, this surfboard offers greater maneuverability in big and strong waves, thanks to its fin configuration and deep concave on the underside.",
   },
   {
     brands_id: 5,
@@ -135,9 +144,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872501/images/uc_xygxlv.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872550/images/uc_hwsurf.png",
     ],
-    name: "Tabla de Surf Wave-Freestyle v4",
+    name: "Surfboard Wave-Freestyle v4",
+    stock: 10,
     description:
-      "Tabla de surf perfecta para riders que buscan un equilibrio entre velocidad y maniobrabilidad. Su forma plana y su sistema de quillas proporcionan una mayor estabilidad y control en olas pequeñas y medianas, mientras que su diseño de tail en swallow tail permite un mayor agarre en olas más grandes y poderosas.",
+      "This surfboard is perfect for riders seeking a balance between speed and maneuverability. Its flat shape and fin system provide greater stability and control in small and medium waves, while its swallow tail design allows for greater grip in larger and more powerful waves.",
   },
   {
     brands_id: 5,
@@ -149,9 +159,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872614/images/uc_ylulds.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872682/images/uc_ey1edp.png",
     ],
-    name: "Tabla de Surf Wave-Freestyle v1",
+    name: "Surfboard Wave-Freestyle v1",
+    stock: 10,
     description:
-      "La tabla de surf Wave-Freestyle v1 es una excelente opción para aquellos que buscan un alto rendimiento en el agua. Con su diseño versátil, esta tabla permite realizar maniobras radicales con facilidad, manteniendo la estabilidad en todo momento.",
+      "The Wave-Freestyle v1 surfboard is an excellent choice for those seeking high performance in the water. With its versatile design, this board allows for easy execution of radical maneuvers while maintaining stability at all times.",
   },
   {
     brands_id: 6,
@@ -163,9 +174,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872726/images/uc_u3gx3u.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872781/images/uc_icurnu.png",
     ],
-    name: "Tabla de Surf JOBE",
+    name: "Surfboard JOBE",
+    stock: 10,
     description:
-      "La tabla de surf JOBE es una excelente opción para aquellos que buscan un alto rendimiento en el agua. Con su diseño versátil, esta tabla permite realizar maniobras radicales con facilidad, manteniendo la estabilidad en todo momento.",
+      "The JOBE surfboard is an excellent option for those seeking high performance in the water. With its versatile design, this board allows for radical maneuvers with ease while maintaining stability at all times.",
   },
   {
     brands_id: 6,
@@ -177,9 +189,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873915/images/uc_uy5xeh.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681874021/images/uc_l5zn3w.png",
     ],
-    name: "Tabla de Surf JOBE-Explorer",
+    name: "Surfboard JOBE-Explorer",
+    stock: 10,
     description:
-      "La tabla de surf JOBE-Explorer es una excelente opción para aquellos que buscan un alto rendimiento en el agua. Con su diseño versátil, esta tabla permite realizar maniobras radicales con facilidad, manteniendo la estabilidad en todo momento.",
+      "The JOBE-Explorer surfboard is an excellent option for those seeking high performance on the water. With its versatile design, this board allows for easy execution of radical maneuvers while maintaining stability at all times.",
   },
   {
     brands_id: 7,
@@ -191,9 +204,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873766/images/uc_dle3rs.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873827/images/uc_ddcanw.png",
     ],
-    name: "Tabla de Surf Compact-a",
+    name: "Surfboard Compact-a",
+    stock: 10,
     description:
-      "La tabla de surf Compact-a es ideal para surfistas que buscan un alto rendimiento en olas grandes. Su diseño moderno y estilizado permite una excelente maniobrabilidad y velocidad, gracias a su forma y estructura. Además, su tamaño proporciona una gran estabilidad y seguridad en condiciones de surf extremas.",
+      "The Compact-a surfboard is ideal for surfers seeking high performance in big waves. Its modern and sleek design allows for excellent maneuverability and speed, thanks to its shape and structure. Additionally, its size provides great stability and safety in extreme surf conditions.",
   },
   {
     brands_id: 8,
@@ -205,9 +219,10 @@ let data = [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873627/images/uc_jfxuui.png",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873692/images/uc_lbepju.png",
     ],
-    name: "Tabla de WakeBoard SungShot-Blue",
+    name: "WakeBoard SungShot-Blue",
+    stock: 10,
     description:
-      "La tabla de wakeboard SungShot-Blue es perfecta para aquellos que quieren experimentar la emoción de realizar acrobacias y trucos en el agua. Su tamaño es ideal para un mayor control y maniobrabilidad, lo que la hace adecuada tanto para principiantes como para expertos en wakeboard. Su diseño con aletas múltiples permite una mayor estabilidad y control en el agua, lo que te permitirá realizar tus trucos con mayor confianza.",
+      "The SungShot-Blue wakeboard is perfect for those who want to experience the thrill of performing stunts and tricks on the water. Its size is ideal for greater control and maneuverability, making it suitable for both beginners and expert wakeboarders. Its multiple fin design allows for greater stability and control on the water, enabling you to perform your tricks with greater confidence.",
   },
   {
     brands_id: 9,
@@ -218,9 +233,10 @@ let data = [
     imagen: [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873582/images/uc_ihmd5t.png",
     ],
-    name: "Traje De Neopreno Billabong Mujer - Negro",
+    name: "Billabong Womens Wetsuit - Black",
+    stock: 10,
     description:
-      "Este traje de neopreno de Billabong para mujer en color negro es perfecto para actividades acuáticas como el surf, el paddle boarding o el buceo. Hecho con materiales de alta calidad, te mantendrá caliente y cómoda en el agua, mientras te protege de los rayos UV",
+      "This Billabong wetsuit for women in black is perfect for water activities such as surfing, paddle boarding, or diving. Made with high-quality materials, it will keep you warm and comfortable in the water while protecting you from UV rays.",
   },
   {
     brands_id: 9,
@@ -231,9 +247,10 @@ let data = [
     imagen: [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873477/images/uc_py4sgp.png",
     ],
-    name: "Traje De Neopreno Billabong Tormenta Hombre - Negro",
+    name: "Billabong Men's Storm Wetsuit - Black",
+    stock: 10,
     description:
-      "Si buscas un traje de neopreno de alta calidad para hombres, este modelo de Billabong es una excelente opción. Diseñado para soportar los climas más fríos, es perfecto para actividades como el surf y el paddle boarding.",
+      "If you're looking for a high-quality wetsuit for men, this Billabong model is an excellent choice. Designed to withstand the coldest climates, it is perfect for activities such as surfing and paddleboarding.",
   },
   {
     brands_id: 12,
@@ -244,9 +261,10 @@ let data = [
     imagen: [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873398/images/uc_het9tr.png",
     ],
-    name: "Traje De Neopreno Gill Zenlite  - Azul",
+    name: "Gill Zenlite Wetsuit - Blue",
+    stock: 10,
     description:
-      "El traje de neopreno Gill Zenlite es una opción de alta calidad para los buceadores más experimentados. Con un diseño ajustado y una construcción de neopreno de 3mm, te mantendrá caliente y cómodo en aguas frías.",
+      "The Gill Zenlite wetsuit is a high-quality option for experienced divers. With a tight-fitting design and 3mm neoprene construction, it will keep you warm and comfortable in cold waters.",
   },
   {
     brands_id: 11,
@@ -257,9 +275,10 @@ let data = [
     imagen: [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873311/images/uc_clytzf.png",
     ],
-    name: "Femenino Orca Synergy - Azul Salvaje",
+    name: "Orca Synergy Women's Wetsuit - Wild Blue",
+    stock: 10,
     description:
-      "Si eres una mujer que ama las actividades acuáticas, el traje de neopreno Orca Synergy es una excelente opción. Con una construcción de neopreno de 3mm y un diseño ajustado, te mantendrá caliente y cómoda en el agua.",
+      "If you are a woman who loves water activities, the Orca Synergy wetsuit is an excellent choice. With a 3mm neoprene construction and a snug design, it will keep you warm and comfortable in the water.",
   },
   {
     brands_id: 10,
@@ -270,9 +289,10 @@ let data = [
     imagen: [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873235/images/uc_vaeqrt.png",
     ],
-    name: "O'neill Traje De Neopreno Hombre Hammer 2mm - Pizarra / Negro",
+    name: "O'neill Men's Hammer 2mm Wetsuit - Slate / Black",
+    stock: 10,
     description:
-      "este traje de neopreno de O'neill es perfecto para hombres que buscan un modelo duradero y cómodo para actividades acuáticas como el surf y el paddle boarding. Con una construcción de neopreno de 2mm y un diseño ajustado, te mantendrá cómodo y protegido en el agua.",
+      "This O'neill wetsuit is perfect for men looking for a durable and comfortable option for water activities such as surfing and paddle boarding. With a 2mm neoprene construction and a snug design, it will keep you comfortable and protected in the water.",
   },
   {
     brands_id: 10,
@@ -283,9 +303,10 @@ let data = [
     imagen: [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873159/images/uc_xcbgyv.png",
     ],
-    name: "O'neill Hombres Atlanta 2mm Back Zip Traje De Neopreno - Negro-Azul",
+    name: "O'neill Mens Atlanta 2mm Back Zip Wetsuit - Black-Blue",
+    stock: 10,
     description:
-      "Si buscas un traje de neopreno duradero y cómodo para actividades acuáticas como el surf y el paddle boarding, el modelo Atlanta de O'neill es una excelente opción. Con una construcción de neopreno de 2mm y un diseño ajustado, te mantendrá cómodo y protegido en el agua.",
+      "If you are looking for a durable and comfortable wetsuit for water activities such as surfing and paddleboarding, the O'Neill Atlanta model is an excellent choice. With a 2mm neoprene construction and a snug design, it will keep you comfortable and protected in the water.",
   },
   {
     brands_id: 13,
@@ -296,9 +317,10 @@ let data = [
     imagen: [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873078/images/uc_psmcl3.png",
     ],
-    name: "Powerjet - Aletas de buceo - Powerjet ",
+    name: "Diving Fins - Powerjet",
+    stock: 10,
     description:
-      "Estas aletas de buceo de Powerjet son perfectas para los buceadores que buscan una opción duradera y eficiente. Con un diseño ergonómico y una construcción resistente, te ayudarán a desplazarte con facilidad en el agua.",
+      "These Powerjet diving fins are perfect for divers looking for a durable and efficient option. With an ergonomic design and a sturdy construction, they will help you move easily through the water.",
   },
   {
     brands_id: 14,
@@ -309,9 +331,10 @@ let data = [
     imagen: [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873025/images/uc_ux5k9f.png",
     ],
-    name: "Aletas Buceo Mundial One 50 Fin",
+    name: "Diving Fins World One 50",
+    stock: 10,
     description:
-      "Las aletas de buceo Mundial One 50 Fin son una excelente opción para los buceadores que buscan un modelo resistente y cómodo. Con un diseño ergonómico y una construcción de alta calidad, te ayudarán a desplazarte con facilidad en el agua.",
+      "The Mundial One 50 Fin diving fins are an excellent choice for divers seeking a durable and comfortable option. With an ergonomic design and high-quality construction, they will help you move easily through the water.",
   },
   {
     brands_id: 14,
@@ -322,9 +345,10 @@ let data = [
     imagen: [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872961/images/uc_xph6wq.png",
     ],
-    name: "Aletas de Buceo apnea Mundial One",
+    name: "Diving fins Mundial One",
+    stock: 10,
     description:
-      "Si eres un apneísta que busca una opción duradera y eficiente, estas aletas de buceo de Mundial One son una excelente opción. Con un diseño ergonómico y una construcción resistente, te ayudarán a desplazarte con facilidad en el",
+      "If you are a freediver looking for a durable and efficient option, these Mundial One diving fins are an excellent choice. With an ergonomic design and a sturdy construction, they will help you move easily in the water.",
   },
   {
     brands_id: 13,
@@ -335,9 +359,10 @@ let data = [
     imagen: [
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681872910/images/uc_p4w6vo.png",
     ],
-    name: "Powerjet - Aletas de buceo - Bare",
+    name: "Diving fins - Nude - Powerjet",
+    stock: 10,
     description:
-      "Estas aletas de buceo de la marca Bare, modelo Powerjet, son ideales para cualquier tipo de buceo. Con un diseño aerodinámico y una estructura de alta resistencia, estas aletas proporcionan una gran propulsión en el agua, permitiendo al buceador desplazarse con facilidad y rapidez",
+      "These Bare Powerjet diving fins are ideal for any type of diving. With an aerodynamic design and a high-strength structure, these fins provide great propulsion in the water, allowing the diver to move with ease and speed.",
   },
 ];
 module.exports = { data };

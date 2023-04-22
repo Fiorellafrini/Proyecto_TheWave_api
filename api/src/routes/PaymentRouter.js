@@ -13,11 +13,11 @@ paymentsRouter.post("/", (req, res) => {
       picture_url: product.imagen[0],
       description: product.description,
       category_id: "art",
-      quantity: 1,
+      quantity: product.quantity,
       unit_price: product.price,
     })),
     back_urls: {
-      success: "http://localhost:3001/SectionHome",
+      success: "http://localhost:3000/SectionHome",
       failure: "/failure",
       pending: "",
     },

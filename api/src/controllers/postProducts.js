@@ -18,7 +18,6 @@ const postProducts = async (product) => {
       description,
       id_type,
       id_brand
-
     });
     const types = await Type.findOne({where: {id_type: id_type}});
     const brands = await Brand.findOne({where: {id_brand:id_brand}});

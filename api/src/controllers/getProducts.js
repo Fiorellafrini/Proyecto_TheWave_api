@@ -1,7 +1,7 @@
 const { Product } = require("../db");
 const { data } = require("./data");
 const getProducts = async (sort, filters) => {
-const {fn, col} =require ("sequelize")
+  const { fn, col } = require("sequelize");
   try {
     const products = data;
 
@@ -14,21 +14,22 @@ const {fn, col} =require ("sequelize")
           size: product.size,
           price: product.price,
           description: product.description,
+          stock: product.stock,
           id_type: product.type_id,
-          id_brand: product.brands_id
+          id_brand: product.brands_id,
         },
       });
     }
 
     let orderBy = [];
     // Ordena los productos según el parámetro de ordenamiento recibido en el URL
-    if (sort === 'priceAsc') {
+    if (sort === "priceAsc") {
       orderBy = [["price", "ASC"]];
-    } else if (sort === 'priceDesc') {
+    } else if (sort === "priceDesc") {
       orderBy = [["price", "DESC"]];
-    } else if (sort === 'nameAsc') {
+    } else if (sort === "nameAsc") {
       orderBy = [[fn("TRIM", col("name")), "ASC"]];
-    } else if (sort === 'nameDesc') {
+    } else if (sort === "nameDesc") {
       orderBy = [[fn("TRIM", col("name")), "DESC"]];
     }
 

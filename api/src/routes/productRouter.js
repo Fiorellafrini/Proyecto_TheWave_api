@@ -139,7 +139,7 @@ productRouter.post("/", async (req, res) => {
 
 productRouter.put("/:id/", async (req, res) => {
   const id = req.params.id;
-  const { name, imagen, size, price, active, id_type, id_brand } = req.body;
+  const { name, imagen, size, price, active, stock, quantity, id_type, id_brand } = req.body;
 
   try {
     const product = await upDateActive(id, {
@@ -148,6 +148,8 @@ productRouter.put("/:id/", async (req, res) => {
       size,
       price,
       active,
+      stock,
+      quantity,
       id_type,
       id_brand
     });
