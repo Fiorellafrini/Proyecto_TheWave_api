@@ -39,15 +39,7 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
     })
     const info = JSON.stringify(token)
 
-    res.json(token);
-  }
-);
-router.get(
-  "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/auth/failure" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/");
+    res.redirect(`http://localhost:3001/auth?info=${info}`);
   }
 );
 router.get("/auth/facebook", passport.authenticate("facebook"));
@@ -57,9 +49,13 @@ router.get(
   passport.authenticate(
     "facebook",
     { scope: ["email"] },
-    { failureRedirect: "/login" }
+    { successReturnToOrRedirect: '/', failureRedirect: "/auth" }
   )
 );
+router.get("/",(req, res)=>{
+  const {info}= req.query
+  res.send(JSON.parse(info))
+})
 router.post("/logout", function (req, res, next) {
   req.logout(function (err) {
     if (err) {
