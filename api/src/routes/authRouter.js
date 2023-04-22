@@ -17,16 +17,22 @@ router.post("/", passport.authenticate("local"), (req, res) => {
     const token = jwt.sign(payload, "contraseña", {
       expiresIn: "1d",
     });
-    console.log(payload)
-    res.status(200).json(token);
+    
+    res.status(200).json(token,payload);
   } catch (error) {
     res.status(500).json({ error: "Ha ocurrido un error." });
   }
 });
 
-router.get("/google",passport.authenticate("google",
-{ scope: ["email", "profile"] },{session: false, }),(req, res) => {
-    const user = req.user;
+router.get(
+  "/google",
+  passport.authenticate("google", { scope: ["email", "profile"] })
+);
+router.get(
+  "/google/callback",
+  passport.authenticate("google", { failureRedirect: "/auth" }),
+  (req, res) => {
+    const user = req.user;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
     payload = {
       id: user.id,
       email: user.email,
@@ -36,17 +42,8 @@ router.get("/google",passport.authenticate("google",
     token = jwt.sign(payload, "process.env.JWT_SECRET_KEY", {
       expiresIn: "1d",
     });
-
+console.log(token)
     res.json(token);
-  }
-);
-router.get(
-  "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/auth/failure" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    // res.redirect("/");
-    res.json(req.token)
   }
 );
 router.get("/facebook", passport.authenticate("facebook"));
