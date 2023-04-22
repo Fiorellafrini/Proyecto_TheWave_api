@@ -22,14 +22,10 @@ router.post("/", passport.authenticate("local"), (req, res) => {
   }
 });
 router.get(
-  "/auth/google",
-  passport.authenticate(
-    "google",
-    { scope: ["email", "profile"] },
-    {
-      session: false,
-    }
-  ),
+  "/google",
+  passport.authenticate("google", { scope: ["email", "profile"] })
+);
+router.get("/google/callback",passport.authenticate("google", { failureRedirect: "/auth" }),
   (req, res) => {
     const user = req.user;
     payload = {
@@ -40,17 +36,10 @@ router.get(
     };
     token = jwt.sign(payload, "process.env.JWT_SECRET_KEY", {
       expiresIn: "1d",
-    });
+    })
+    const info = JSON.stringify(token)
 
-    res.json(token);
-  }
-);
-router.get(
-  "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/auth/failure" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/");
+    res.redirect(`http://localhost:3001/auth?info=${info}`);
   }
 );
 router.get("/auth/facebook", passport.authenticate("facebook"));
@@ -60,9 +49,20 @@ router.get(
   passport.authenticate(
     "facebook",
     { scope: ["email"] },
-    { failureRedirect: "/login" }
+    { successReturnToOrRedirect: '/', failureRedirect: "/auth" }
   )
 );
+router.get("/",(req, res)=>{
+  const {info}= req.query
+  const decod = jwt.decode(JSON.parse(info));
+  const payload = {
+    id: decod.id,
+    email: decod.email,
+    name: decod.name,
+    lastName: decod.lastName
+  }
+  res.send(JSON.parse(info))
+})
 router.post("/logout", function (req, res, next) {
   req.logout(function (err) {
     if (err) {

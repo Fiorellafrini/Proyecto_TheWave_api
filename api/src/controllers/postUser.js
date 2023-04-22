@@ -35,7 +35,7 @@ const postUser = async (user) => {
     });
     return "The user has been created successfully";
   } else {
-    hash = await bcrypt.hash(password, 16); //encrypt the password so as not to save it in plain text
+    hash = await bcrypt.hash(password, 10); //encrypt the password so as not to save it in plain text
     // create an error instance to handle create error with parameters that are unique
     await User.create({
       name,
