@@ -18,7 +18,8 @@ paymentsRouter.post("/", (req, res) => {
     })),
     back_urls: {
       success: "http://localhost:3000/SectionHome",
-      failure: "/failure",
+      failure:
+        "https://proyecto-the-wave-client-1kip.vercel.app/SectionHome",
       pending: "",
     },
     auto_return: "approved",
