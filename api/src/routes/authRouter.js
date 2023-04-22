@@ -21,10 +21,8 @@ router.post("/", passport.authenticate("local"), (req, res) => {
     res.status(500).json({ error: "Ha ocurrido un error." });
   }
 });
-router.get(
-  "/google",
-  passport.authenticate("google", { scope: ["email", "profile"] })
-);
+router.get("/google", passport.authenticate("google", { scope: ["email", "profile"] }));
+
 router.get("/google/callback",passport.authenticate("google", { failureRedirect: "/auth" }),
   (req, res) => {
     const user = req.user;

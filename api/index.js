@@ -24,9 +24,9 @@ const  getType = require("./src/controllers/getType.js");
 const getProducts = require("./src/controllers/getProducts.js");
 const {PORT} = process.env
 
-conn.sync({ alter: true }).then(async () => {
+conn.sync({ force: true }).then(async () => {
   server.listen(3001, () => {
-    console.log("Api listening on http://localhost:3001"); // eslint-disable-line no-console
+    console.log('🚀⚡ listening on port: 3001 ⚡🚀'); // eslint-disable-line no-console
   });
   await getType();
   await getBrands();

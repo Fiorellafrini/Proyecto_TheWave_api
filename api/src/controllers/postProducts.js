@@ -1,35 +1,45 @@
 const { Product, Type, Brand } = require("../db");
 
 const postProducts = async (product) => {
-  try {
+  let { name, imagen, description, size, price, id_type, id_brand } = product;
 
-    let { name, imagen, size, price, id_type, id_brand } = product;
-    if (!name && !imagen && !size && !price ) {
-      throw new Error("Missing Information");
+  if (!name || !imagen || !size || !price || !description) {
+    switch (
+      true // handle errors individually in case a specific piece of information is missing
+    ) {
+      case !name:
+        throw new Error("Please insert the name for the new product.");
+      case !images:
+        throw new Error("Please insert an image for the new product.");
+      case !size:
+        throw new Error("Please insert the size for the new product.");
+      case !price:
+        throw new Error("Please insert a price for the new product.");
+      case !description:
+        throw new Error("Please insert a description for the new product.");
+
+      default:
+        break;
     }
+  } else {
     id_type = parseInt(id_type);
     id_brand = parseInt(id_brand);
-    
-      const newProduct = await Product.create({
+
+    const newProduct = await Product.create({
       name,
       imagen,
+      description,
       size,
       price,
-      description,
       id_type,
       id_brand,
-
     });
-    const types = await Type.findOne({where: {id_type: id_type}});
-    const brands = await Brand.findOne({where: {id_brand:id_brand}});
+    const types = await Type.findOne({ where: { id_type: id_type } });
+    const brands = await Brand.findOne({ where: { id_brand: id_brand } });
     newProduct.setType(types);
     newProduct.setBrand(brands);
-  return "exito al crear el producto"
+    return "exito al crear el producto";
   }
-  catch (error) {
-    return error.message;
-  }
-
 };
 
 module.exports = postProducts;
