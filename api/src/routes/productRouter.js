@@ -128,7 +128,23 @@ productRouter.get("/", async (req, res) => {
 productRouter.post("/", async (req, res) => {
   try {
     const postProduct = await postProducts(req.body);
-    if (!postProduct) throw Error("product not found");
+    // if (!postProduct) throw Error("product not found");
+        await transporter.sendMail({
+          from: "The Wave 🏄 <pfthewhave@gmail.com>", // sender address
+          to: "", // list of receivers   // falta relacionar el usuario para poder sacar el crreo donde se enviara la notificacion
+          subject: "Product created✔", // Subject line
+          html: `<p>We wanted to let you know that you have just published a new product on our platform. ${req.body.name}We are excited to have new products in our catalog and we are sure our users will be too.
+Remember that to make sure your product gets maximum visibility, it's important that you include all relevant information, such as a detailed product description, high quality photos and technical specifications, if applicable.
+If you need help optimizing your product listing or have any questions or concerns, please don't hesitate to contact us. We are here to help you in any way we can.
+Thank you for being part of our community and for contributing to making our platform an exciting and diverse place to shop online!
+Sincerely,
+The Wave Team
+
+Translated with www.DeepL.com/Translator (free version)
+      </p><a href="https://proyecto-the-wave-client-1kip.vercel.app/SectionHome">Nuestro link</a>
+
+`, // html body
+        });
     res.status(201).json(postProduct);
   } catch (error) {
     res.status(404).send({ error: error.message });

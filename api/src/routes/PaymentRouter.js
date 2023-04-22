@@ -17,8 +17,9 @@ paymentsRouter.post("/", (req, res) => {
       unit_price: product.price,
     })),
     back_urls: {
-      success: "http://localhost:3001/SectionHome",
-      failure: "/failure",
+      success: "http://localhost:3000/SectionHome",
+      failure:
+        "https://proyecto-the-wave-client-1kip.vercel.app/SectionHome",
       pending: "",
     },
     auto_return: "approved",
