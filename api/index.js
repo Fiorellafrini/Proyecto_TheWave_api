@@ -18,12 +18,11 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
-
 const { conn } = require("./src/db.js");
-
-const getBrands = require("./src/controllers/getBrands.js");
-const getType = require("./src/controllers/getType.js");
+const getBrands  = require("./src/controllers/getBrands.js");
+const  getType = require("./src/controllers/getType.js");
 const getProducts = require("./src/controllers/getProducts.js");
+const {PORT} = process.env
 
 conn.sync({ alter: true }).then(async () => {
   server.listen(3001, () => {
