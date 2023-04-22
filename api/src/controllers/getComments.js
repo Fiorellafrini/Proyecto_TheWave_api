@@ -1,7 +1,7 @@
-const { Comment } = require("../db");
+const { Review } = require("../db");
 
 const getComment = async () => {
-  const comentarios = await Comment.findAll({
+  const comentarios = await Review.findAll({
     where: {
       soft_delete: false,
     },
@@ -10,7 +10,7 @@ const getComment = async () => {
 };
 
 const getAllComments = async () => {
-  const comentarios = await Comment.findAll();
+  const comentarios = await Review.findAll();
   return comentarios;
 };
 

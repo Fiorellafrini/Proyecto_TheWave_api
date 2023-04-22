@@ -24,7 +24,7 @@ const  getType = require("./src/controllers/getType.js");
 const getProducts = require("./src/controllers/getProducts.js");
 const {PORT} = process.env
 
-conn.sync({ force: true }).then(async () => {
+conn.sync({ alter: true }).then(async () => {
   server.listen(3001, () => {
     console.log('🚀⚡ listening on port: 3001 ⚡🚀'); // eslint-disable-line no-console
   });
