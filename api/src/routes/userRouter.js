@@ -3,8 +3,23 @@ const userRouter = Router();
 const { User } = require("../db");
 const getUserId = require("../controllers/getUserId");
 const postUser = require("../controllers/postUser");
+const getAllUser = require ("../controllers/getAllUser")
 // const deleteUserId = require ('../controllers/postUser');
 const upDateUser = require("../controllers/putUser");
+
+
+//////////////////////////////////////// GET ALL //////////////////////////////////////////////////////////
+
+userRouter.get("/", async (req, res) => {
+
+try {
+  const users = await getAllUser(); // Llama al controlador para obtener todos los usuarios
+  res.status(200).json(users); // Devuelve los usuarios en formato JSON con un código de estado 200
+} catch (error) {
+  res.status(500).json({ error: error.message }); // Devuelve un error con un código de estado 500 si ocurre algún problema al buscar los usuarios
+}
+});
+
 
 ////////////////////////////////////////////// G E T ////////////////////////////////////////////////////
 userRouter.get("/:id", async (req, res) => {
@@ -69,5 +84,7 @@ userRouter.put("/:id/active", async (req, res) => {
     res.status(500).json({ mensaje: error.message });
   }
 });
+
+
 
 module.exports = userRouter;

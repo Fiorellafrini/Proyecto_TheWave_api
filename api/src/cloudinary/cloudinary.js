@@ -1,5 +1,4 @@
 const cloudinary = require('cloudinary').v2;
-const { CLOUD_NAME, API_KEY, API_SECRET } = process.env;
 const { Product } = require('../db')
 
 // Configuration 
