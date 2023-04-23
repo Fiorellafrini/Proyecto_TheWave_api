@@ -2,7 +2,7 @@ const { Product, Type, Brand } = require("../db");
 const User = require("../db.js")
 
 const postProducts = async (product) => {
-  let { name, imagen, description, size, price, id_type, id_brand } = product;
+  let { name, imagen, description, size, price, id_type, id_brand, stock } = product;
 
   if (!name || !imagen || !size || !price || !description) {
     switch (
@@ -34,6 +34,7 @@ const postProducts = async (product) => {
       price,
       id_type,
       id_brand,
+      stock
     });
     const types = await Type.findOne({ where: { id_type: id_type } });
     const brands = await Brand.findOne({ where: { id_brand: id_brand } });
