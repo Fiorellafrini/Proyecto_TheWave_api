@@ -1,9 +1,7 @@
 const { Product } = require("../db");
 const { data } = require("./data");
-
-
-
-const getProducts = async () => {
+const getProducts = async (sort, filters) => {
+  const { fn, col } = require("sequelize");
   try {
     const products = data;
 
@@ -16,8 +14,9 @@ const getProducts = async () => {
           size: product.size,
           price: product.price,
           description: product.description,
+          stock: product.stock,
           id_type: product.type_id,
-          id_brand: product.brands_id
+          id_brand: product.brands_id,
         },
       });
     }
