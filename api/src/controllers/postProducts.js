@@ -1,4 +1,5 @@
 const { Product, Type, Brand } = require("../db");
+const User = require("../db.js")
 
 const postProducts = async (product) => {
   let { name, imagen, description, size, price, id_type, id_brand } = product;
