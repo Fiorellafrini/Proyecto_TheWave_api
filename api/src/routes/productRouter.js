@@ -129,22 +129,22 @@ productRouter.post("/", async (req, res) => {
   try {
     const postProduct = await postProducts(req.body);
     // if (!postProduct) throw Error("product not found");
-        await transporter.sendMail({
-          from: "The Wave 🏄 <pfthewhave@gmail.com>", // sender address
-          to: "", // list of receivers   // falta relacionar el usuario para poder sacar el crreo donde se enviara la notificacion
-          subject: "Product created✔", // Subject line
-          html: `<p>We wanted to let you know that you have just published a new product on our platform. ${req.body.name}We are excited to have new products in our catalog and we are sure our users will be too.
-Remember that to make sure your product gets maximum visibility, it's important that you include all relevant information, such as a detailed product description, high quality photos and technical specifications, if applicable.
-If you need help optimizing your product listing or have any questions or concerns, please don't hesitate to contact us. We are here to help you in any way we can.
-Thank you for being part of our community and for contributing to making our platform an exciting and diverse place to shop online!
-Sincerely,
-The Wave Team
+//         await transporter.sendMail({
+//           from: "The Wave 🏄 <pfthewhave@gmail.com>", // sender address
+//           to: "", // list of receivers   // falta relacionar el usuario para poder sacar el crreo donde se enviara la notificacion
+//           subject: "Product created✔", // Subject line
+//           html: `<p>We wanted to let you know that you have just published a new product on our platform. ${req.body.name}We are excited to have new products in our catalog and we are sure our users will be too.
+// Remember that to make sure your product gets maximum visibility, it's important that you include all relevant information, such as a detailed product description, high quality photos and technical specifications, if applicable.
+// If you need help optimizing your product listing or have any questions or concerns, please don't hesitate to contact us. We are here to help you in any way we can.
+// Thank you for being part of our community and for contributing to making our platform an exciting and diverse place to shop online!
+// Sincerely,
+// The Wave Team
 
-Translated with www.DeepL.com/Translator (free version)
-      </p><a href="https://proyecto-the-wave-client-1kip.vercel.app/SectionHome">Nuestro link</a>
+// Translated with www.DeepL.com/Translator (free version)
+//       </p><a href="https://proyecto-the-wave-client-1kip.vercel.app/SectionHome">Nuestro link</a>
 
-`, // html body
-        });
+// `, // html body
+//         });
     res.status(201).json(postProduct);
   } catch (error) {
     res.status(404).send({ error: error.message });
@@ -153,27 +153,127 @@ Translated with www.DeepL.com/Translator (free version)
 
 //////////////////////////////////////////////// PUT ACTIVE PRODUCT /////////////////////////////////////////////////
 
-productRouter.put("/:id/", async (req, res) => {
-  const id = req.params.id;
-  const { name, imagen, size, price, active, stock, quantity, id_type, id_brand } = req.body;
+// productRouter.put("/:id/", async (req, res) => {
+//   const id = req.params.id;
+//   const { name, imagen, size, price, active, stock, quantity, id_type, id_brand } = req.body;
 
+//   try {
+//     const product = await upDateActive(id, {
+//       name,
+//       imagen,
+//       size,
+//       price,
+//       active,
+//       stock,
+//       quantity,
+//       id_type,
+//       id_brand
+//     });
+//     if (product) return res.status(200).json(product);
+//   } catch (error) {
+//     res.status(500).json({ mensaje: error.message });
+//   }
+// });
+productRouter.put("/:id/", async (req, res) => {
+
+  const { id } = req.params;
+  const { body } = req;
   try {
-    const product = await upDateActive(id, {
-      name,
-      imagen,
-      size,
-      price,
-      active,
-      stock,
-      quantity,
-      id_type,
-      id_brand
-    });
-    if (product) return res.status(200).json(product);
+    const product = await upDateActive(id, body);
+    res.status(200).json(product);
   } catch (error) {
-    res.status(500).json({ mensaje: error.message });
+    res.status(400).json({ msg: error.message });
   }
 });
+
+// const updatedPr = async (req, res) => {
+//   const { name, imagen, size, price, active, id_type, id_brand} = req.body;
+//   try {
+//     const updatedProper = await Product.update(
+//       {
+//         name,
+//         imagen,
+//         size,
+//         price,
+//         active,
+//         id_type,
+//         id_brand
+//       },
+//       {
+//         where: {
+//           id: req.params.id,
+//         },
+//       }
+//     );
+//     res.status(200).json("la propiedad fue modificada con exito");
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//   }
+// };
+
+// // Llamar a la función updatedPr dentro del manejador de ruta
+// productRouter.put("/:id/", async (req, res) => {
+//   updatedPr(req, res);
+// });
+
+
+
+// productRouter.put("/:id/", async (req, res) => {
+//   const updatedPr = async (req, res) => {
+//     const { name, imagen, size, price, active, id_type, id_brand} = req.body;
+//     try {
+//       const updatedProper = await Product.update(
+//         {
+//         name,
+//         imagen,
+//         size,
+//         price,
+//         active,
+//         id_type,
+//         id_brand
+//         },
+//         {
+//           where: {
+//             id: req.params.id,
+//           },
+//         }
+//       );
+//       res.status(200).json("la propiedad  fue modificada con exito");
+//     } catch (error) {
+//       res.status(400).json({ error: error.message });
+//     }
+//   };
+// })
+//   const id = req.params.id;
+//   const { name, imagen, size, price, active, id_type, id_brand } = req.body;
+
+//   try {
+//     const product = await upDateActive(id, {
+//       name,
+//       imagen,
+//       size,
+//       price,
+//       active,
+//       id_type,
+//       id_brand
+//     });
+//     if (product) return res.status(200).json(product);
+//   } catch (error) {
+//     res.status(500).json({ mensaje: error.message });
+//   }
+// });
+// productRouter.put("/:id/", async (req, res) => {
+//   const id = req.params.id;
+//  const { body } = req;
+
+//   try {
+//     const product = await upDateActive(id, body);
+//     if (product) return res.status(200).json(product);
+//   } catch (error) {
+//     res.status(500).json({ mensaje: error.message });
+//   }
+// });
+
 
 ///////////////////////////////////////// DELETE ////////////////////////////////////////////////
 
