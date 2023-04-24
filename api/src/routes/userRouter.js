@@ -3,10 +3,10 @@ const userRouter = Router();
 const { User } = require("../db");
 const getUserId = require("../controllers/getUserId");
 const postUser = require("../controllers/postUser");
+const getAllUser = require ("../controllers/getAllUser")
 // const deleteUserId = require ('../controllers/postUser');
 const upDateUser = require("../controllers/putUser");
 const {transporter} = require("../nodemailer/nodemailer.js");
-const getAllUser =require("../controllers/getAllUser")
 ///////////////////////////////////////////////GET ///////////////////////////////////////////////////////
 
 userRouter.get("/", async (req, res) => {
@@ -94,5 +94,7 @@ userRouter.put("/:id/active", async (req, res) => {
     res.status(500).json({ mensaje: error.message });
   }
 });
+
+
 
 module.exports = userRouter;

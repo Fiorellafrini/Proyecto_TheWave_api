@@ -35,6 +35,7 @@ const postProducts = async (product) => {
       stock,
       id_type,
       id_brand,
+      stock
     });
     const types = await Type.findOne({ where: { id_type: id_type } });
     const brands = await Brand.findOne({ where: { id_brand: id_brand } });
@@ -43,5 +44,11 @@ const postProducts = async (product) => {
     return "exito al crear el producto";
   }
 };
+
+
+
+
+
+
 
 module.exports = postProducts;
