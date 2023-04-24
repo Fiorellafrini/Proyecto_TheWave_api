@@ -38,6 +38,7 @@ let data = [
     imagen: [
       // https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681876652/images/images_lr4qia.jpg",
       "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871482/images/uc_dmubfm.png",
+      
     ],
     name: "Stand Up Paddle Board Vesl-1559",
     stock: 10,

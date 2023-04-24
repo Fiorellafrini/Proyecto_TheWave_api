@@ -16,16 +16,19 @@ router.post("/", passport.authenticate("local"), (req, res) => {
     const token = jwt.sign(payload, "contraseña ", {
       expiresIn: "1d",
     });
-    console.log(payload)
-    res.status(200).json(token);
+
+    res.status(200).json(
+      {
+        token:token,
+        user: payload
+      }
+    );
   } catch (error) {
     res.status(500).json({ error: "Ha ocurrido un error." });
   }
 });
-router.get(
-  "/google",
-  passport.authenticate("google", { scope: ["email", "profile"] })
-);
+router.get("/google", passport.authenticate("google", { scope: ["email", "profile"] }));
+
 router.get("/google/callback",passport.authenticate("google", { failureRedirect: "/auth" }),
   (req, res) => {
     const user = req.user;
@@ -38,9 +41,15 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
     token = jwt.sign(payload, "process.env.JWT_SECRET_KEY", {
       expiresIn: "1d",
     })
-    const info = JSON.stringify(token)
-
-    res.redirect(`http://localhost:3001/auth?info=${info}`);
+    tokenStr = JSON.stringify(token)
+    res.status(200).send(`<!DOCTYPE html>
+    <html lang="en">
+      <body>
+      </body>
+      <script>
+        window.opener.postMessage(${tokenStr}, 'http://localhost:3000')
+      </script>
+    </html>`)
   }
 );
 router.get("/auth/facebook", passport.authenticate("facebook"));

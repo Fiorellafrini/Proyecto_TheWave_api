@@ -3,11 +3,24 @@ const userRouter = Router();
 const { User } = require("../db");
 const getUserId = require("../controllers/getUserId");
 const postUser = require("../controllers/postUser");
+const getAllUser = require ("../controllers/getAllUser")
 // const deleteUserId = require ('../controllers/postUser');
 const upDateUser = require("../controllers/putUser");
 const {transporter} = require("../nodemailer/nodemailer.js");
+///////////////////////////////////////////////GET ///////////////////////////////////////////////////////
 
-////////////////////////////////////////////// G E T ////////////////////////////////////////////////////
+userRouter.get("/", async (req, res) => {
+
+  try {
+    const users = await getAllUser(); // Llama al controlador para obtener todos los usuarios
+    res.status(200).json(users); // Devuelve los usuarios en formato JSON con un código de estado 200
+  } catch (error) {
+    res.status(500).json({ error: error.message }); // Devuelve un error con un código de estado 500 si ocurre algún problema al buscar los usuarios
+  }
+  });
+
+
+////////////////////////////////////////////// G E T ID////////////////////////////////////////////////////
 userRouter.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -25,7 +38,7 @@ userRouter.post("/", async (req, res) => {
     const userPost = await postUser(req.body);
     await transporter.sendMail({
       from: "The Wave 🏄 <pfthewhave@gmail.com>", // sender address
-      to: "req.body.email", // list of receivers
+      to: `${req.body.email}`, // list of receivers
       subject: "User created✔", // Subject line
       text: "Hello world?", // plain text body
       html: `<p>We welcome you <b> ${req.body.name} </b>  a The Wave, 
@@ -42,7 +55,7 @@ userRouter.post("/", async (req, res) => {
     Best regards, The Wave Team
       </p><a href="https://proyecto-the-wave-client-1kip.vercel.app/SectionHome">Nuestro link</a>
 
-`, // html body
+// `, // html body
     });
     res.status(201).json(userPost);
   } catch (error) {
@@ -51,15 +64,6 @@ userRouter.post("/", async (req, res) => {
 });
 
 /////////////////////////////////////// D E L E T E ////////////////////////////////////////////////////////
-// userRouter.delete('/delete/:id', async(req, res) =>{
-//     const { id } = req.params
-//     try {
-//       const deleteUser= await deleteUserId(id)
-//       res.status(200).json(deleteUser)
-//     } catch (error) {
-//       res.status(404).send({error: error.message})
-//     }
-//   });
 
 userRouter.delete("/delete/:id", async (req, res) => {
   const { id } = req.params;
@@ -90,5 +94,7 @@ userRouter.put("/:id/active", async (req, res) => {
     res.status(500).json({ mensaje: error.message });
   }
 });
+
+
 
 module.exports = userRouter;
