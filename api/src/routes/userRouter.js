@@ -25,7 +25,7 @@ userRouter.post("/", async (req, res) => {
     const userPost = await postUser(req.body);
     await transporter.sendMail({
       from: "The Wave 🏄 <pfthewhave@gmail.com>", // sender address
-      to: "req.body.email", // list of receivers
+      to: `${req.body.email}`, // list of receivers
       subject: "User created✔", // Subject line
       text: "Hello world?", // plain text body
       html: `<p>We welcome you <b> ${req.body.name} </b>  a The Wave, 

@@ -48,13 +48,13 @@ const { User, Type, Review, Product, Brand } = sequelize.models;
 
 // Aca vendrian las relaciones
 
-/* Product.hasMany(Review, { foreignKey: "product_id", sourceKey: "id" });
+Product.hasMany(Review, { foreignKey: "product_id", sourceKey: "id" });
 Review.belongsTo(Product, { foreignKey: "product_id", targetKey: "id" });
 
 User.hasMany(Review, { foreignKey: "user_id", sourceKey: "id" });
 Review.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
 //----------------------
-User.hasMany(Product, { foreignKey: "id_user", sourceKey: "id" });
+/*User.hasMany(Product, { foreignKey: "id_user", sourceKey: "id" });
 Product.belongsTo(User, { foreignKey: "id_user", targetKey: "id" }); */
 /*
 Booking.hasOne(Property,{foreignKey:"autor_propId", sourceKey: "id"})
