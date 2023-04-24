@@ -1,7 +1,7 @@
 const { Product, Type, Brand } = require("../db");
 
 const postProducts = async (product) => {
-  let { name, imagen, description, size, price, id_type, id_brand } = product;
+  let { name, imagen, description, size, price, id_type, id_brand, stock } = product;
 
   if (!name || !imagen || !size || !price || !description) {
     switch (
@@ -9,7 +9,7 @@ const postProducts = async (product) => {
     ) {
       case !name:
         throw new Error("Please insert the name for the new product.");
-      case !images:
+      case !imagen:
         throw new Error("Please insert an image for the new product.");
       case !size:
         throw new Error("Please insert the size for the new product.");
@@ -31,8 +31,10 @@ const postProducts = async (product) => {
       description,
       size,
       price,
+      stock,
       id_type,
       id_brand,
+      stock
     });
     const types = await Type.findOne({ where: { id_type: id_type } });
     const brands = await Brand.findOne({ where: { id_brand: id_brand } });
@@ -41,5 +43,11 @@ const postProducts = async (product) => {
     return "exito al crear el producto";
   }
 };
+
+
+
+
+
+
 
 module.exports = postProducts;

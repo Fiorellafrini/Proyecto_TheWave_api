@@ -21,43 +21,6 @@ productRouter.get("/:id", async (req, res) => {
 
 ///////////////////////////////////////// GET PRODUCTS ///////////////////////////////////////////////////
 
-// productRouter.get("/", async (req, res) => {
-//   try {
-//     const { name, page = 0, size = 5, sort } = req.query; // Obtén el valor del parámetro de ordenamiento "sort" de la URL
-
-//     if (page && size) {
-//       let options = {
-//         limit: +size,
-//         offset: +page * +size,
-//       };
-
-//       const { count, rows } = await Product.findAndCountAll(options);
-
-//       return res.json({
-//         total: count,
-//         products: rows,
-//       });
-//     }
-
-//     let getAllProducts;
-//     if (sort) {
-//       // Si se proporciona el parámetro de ordenamiento "sort", utiliza la función getProducts con el valor de sort
-//       getAllProducts = await getProducts(sort);
-//     } else {
-//       // Si no se proporciona el parámetro de ordenamiento, utiliza la función getProducts sin ningún parámetro
-//       getAllProducts = await getProducts();
-//     }
-
-//     if (name) {
-//       const products = await byName(name);
-//       if (products) return res.status(200).json(products);
-//     }
-
-//     res.status(200).json(getAllProducts);
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// });
 productRouter.get("/", async (req, res) => {
   // http://localhost:3001/product?sort=priceDesc&type=1&nameDesc(con esto hacen las combinaciones como quieren en el insomnia)
   // http://localhost:3001/product?sort=priceAsc&brand=1
@@ -137,25 +100,127 @@ productRouter.post("/", async (req, res) => {
 
 //////////////////////////////////////////////// PUT ACTIVE PRODUCT /////////////////////////////////////////////////
 
-productRouter.put("/:id/", async (req, res) => {
-  const id = req.params.id;
-  const { name, imagen, size, price, active, id_type, id_brand } = req.body;
+// productRouter.put("/:id/", async (req, res) => {
+//   const id = req.params.id;
+//   const { name, imagen, size, price, active, stock, quantity, id_type, id_brand } = req.body;
 
+//   try {
+//     const product = await upDateActive(id, {
+//       name,
+//       imagen,
+//       size,
+//       price,
+//       active,
+//       stock,
+//       quantity,
+//       id_type,
+//       id_brand
+//     });
+//     if (product) return res.status(200).json(product);
+//   } catch (error) {
+//     res.status(500).json({ mensaje: error.message });
+//   }
+// });
+productRouter.put("/:id/", async (req, res) => {
+
+  const { id } = req.params;
+  const { body } = req;
   try {
-    const product = await upDateActive(id, {
-      name,
-      imagen,
-      size,
-      price,
-      active,
-      id_type,
-      id_brand
-    });
-    if (product) return res.status(200).json(product);
+    const product = await upDateActive(id, body);
+    res.status(200).json(product);
   } catch (error) {
-    res.status(500).json({ mensaje: error.message });
+    res.status(400).json({ msg: error.message });
   }
 });
+
+// const updatedPr = async (req, res) => {
+//   const { name, imagen, size, price, active, id_type, id_brand} = req.body;
+//   try {
+//     const updatedProper = await Product.update(
+//       {
+//         name,
+//         imagen,
+//         size,
+//         price,
+//         active,
+//         id_type,
+//         id_brand
+//       },
+//       {
+//         where: {
+//           id: req.params.id,
+//         },
+//       }
+//     );
+//     res.status(200).json("la propiedad fue modificada con exito");
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//   }
+// };
+
+// // Llamar a la función updatedPr dentro del manejador de ruta
+// productRouter.put("/:id/", async (req, res) => {
+//   updatedPr(req, res);
+// });
+
+
+
+// productRouter.put("/:id/", async (req, res) => {
+//   const updatedPr = async (req, res) => {
+//     const { name, imagen, size, price, active, id_type, id_brand} = req.body;
+//     try {
+//       const updatedProper = await Product.update(
+//         {
+//         name,
+//         imagen,
+//         size,
+//         price,
+//         active,
+//         id_type,
+//         id_brand
+//         },
+//         {
+//           where: {
+//             id: req.params.id,
+//           },
+//         }
+//       );
+//       res.status(200).json("la propiedad  fue modificada con exito");
+//     } catch (error) {
+//       res.status(400).json({ error: error.message });
+//     }
+//   };
+// })
+//   const id = req.params.id;
+//   const { name, imagen, size, price, active, id_type, id_brand } = req.body;
+
+//   try {
+//     const product = await upDateActive(id, {
+//       name,
+//       imagen,
+//       size,
+//       price,
+//       active,
+//       id_type,
+//       id_brand
+//     });
+//     if (product) return res.status(200).json(product);
+//   } catch (error) {
+//     res.status(500).json({ mensaje: error.message });
+//   }
+// });
+// productRouter.put("/:id/", async (req, res) => {
+//   const id = req.params.id;
+//  const { body } = req;
+
+//   try {
+//     const product = await upDateActive(id, body);
+//     if (product) return res.status(200).json(product);
+//   } catch (error) {
+//     res.status(500).json({ mensaje: error.message });
+//   }
+// });
+
 
 ///////////////////////////////////////// DELETE ////////////////////////////////////////////////
 
