@@ -4,13 +4,13 @@ const User = require("../db.js")
 const postProducts = async (product) => {
   let { name, imagen, description, size, price, id_type, id_brand, stock } = product;
 
-  if (!name || !imagen || !size || !price || !description) {
+  if (!name || !imagen || !size || !price || !description ) {
     switch (
       true // handle errors individually in case a specific piece of information is missing
     ) {
       case !name:
         throw new Error("Please insert the name for the new product.");
-      case !images:
+      case !imagen:
         throw new Error("Please insert an image for the new product.");
       case !size:
         throw new Error("Please insert the size for the new product.");
@@ -32,6 +32,7 @@ const postProducts = async (product) => {
       description,
       size,
       price,
+      stock,
       id_type,
       id_brand,
       stock

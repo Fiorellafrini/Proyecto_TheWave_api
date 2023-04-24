@@ -1,7 +1,5 @@
 const { Product } = require("../db");
-const { data }= require("./data");
-
-
+const { data } = require("./data");
 
 const data1 = data.map((product) => {
   return {
