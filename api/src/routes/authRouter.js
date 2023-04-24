@@ -16,8 +16,13 @@ router.post("/", passport.authenticate("local"), (req, res) => {
     const token = jwt.sign(payload, "contraseña ", {
       expiresIn: "1d",
     });
-    console.log(payload)
-    res.status(200).json(token);
+
+    res.status(200).json(
+      {
+        token:token,
+        user: payload
+      }
+    );
   } catch (error) {
     res.status(500).json({ error: "Ha ocurrido un error." });
   }
