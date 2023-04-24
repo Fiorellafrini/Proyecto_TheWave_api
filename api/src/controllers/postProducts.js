@@ -1,10 +1,9 @@
 const { Product, Type, Brand } = require("../db");
-const User = require("../db.js")
 
 const postProducts = async (product) => {
   let { name, imagen, description, size, price, id_type, id_brand, stock } = product;
 
-  if (!name || !imagen || !size || !price || !description ) {
+  if (!name || !imagen || !size || !price || !description) {
     switch (
       true // handle errors individually in case a specific piece of information is missing
     ) {

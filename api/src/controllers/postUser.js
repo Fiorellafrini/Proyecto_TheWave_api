@@ -1,8 +1,6 @@
 const { User } = require("../db");
 const bcrypt = require("bcrypt");
 
-
-
 const postUser = async (user) => {
   const {
     name,
