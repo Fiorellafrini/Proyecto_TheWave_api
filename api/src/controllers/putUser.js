@@ -18,5 +18,10 @@ const { User } = require("../db");
             throw new Error('There was an error updating the user');
           }
         }
+
+
+
+  //       await product.set(body); 
+  // await product.save(); 
     
         module.exports= upDateUser;

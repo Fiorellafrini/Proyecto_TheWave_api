@@ -42,8 +42,8 @@ module.exports = (sequelize) => {
       },
       active: {
         type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: true,
+        // allowNull: false,
+        defaultValue: false,
       },
     },
     {
