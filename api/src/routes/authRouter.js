@@ -36,9 +36,15 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
     token = jwt.sign(payload, "process.env.JWT_SECRET_KEY", {
       expiresIn: "1d",
     })
-    const info = JSON.stringify(token)
-
-    res.redirect(`http://localhost:3001/auth?info=${info}`);
+    tokenStr = JSON.stringify(token)
+    res.status(200).send(`<!DOCTYPE html>
+    <html lang="en">
+      <body>
+      </body>
+      <script>
+        window.opener.postMessage(${tokenStr}, 'http://localhost:3000')
+      </script>
+    </html>`)
   }
 );
 router.get("/auth/facebook", passport.authenticate("facebook"));
