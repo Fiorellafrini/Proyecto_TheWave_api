@@ -47,7 +47,7 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
       <body>
       </body>
       <script>
-        window.opener.postMessage(${tokenStr}, 'http://localhost:3000')
+        window.opener.postMessage(${tokenStr}, 'https://proyectothewaveapi-production.up.railway.app/auth/google/callback')
       </script>
     </html>`)
   }
