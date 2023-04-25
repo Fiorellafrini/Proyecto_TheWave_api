@@ -50,12 +50,14 @@ module.exports = (sequelize) => {
         allowNull: false,
         defaultValue: true, // por defecto, los productos están activos
       },
+      deletedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null,
+      },
     },
     {
-      
-      // paranoid: true,
-      // deletedAt: 'destroyTime'
-      timestamps: false,
+      paranoid: true,
     }
   );
 };
