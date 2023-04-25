@@ -2,11 +2,13 @@ const { User} = require("../db");
 
 
 const getAllUser = async () => {
- 
-    const users = await User.findAll(); // Busca todos los usuarios en tu base de datos
-    if (!users) throw Error ('error')
-        return users
-  }
+    try {
+      const users = await User.findAll({ where: { active: true } });
+      return users;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  };
   
   module.exports = getAllUser;
   

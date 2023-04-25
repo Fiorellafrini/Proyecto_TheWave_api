@@ -8,7 +8,7 @@ const { User } = require("../db");
         try {
             const user = await User.findOne({ where: { id } });
             if (user) {
-              await user.update({ name,lastName,email, active: body.active });
+              await user.update({ name,lastName,email });
               return user;
             } else {
                 throw new Error('The specified user was not found');
