@@ -54,8 +54,8 @@ Review.belongsTo(Product, { foreignKey: "product_id", targetKey: "id" });
 User.hasMany(Review, { foreignKey: "user_id", sourceKey: "id" });
 Review.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
 //----------------------
-/*User.hasMany(Product, { foreignKey: "id_user", sourceKey: "id" });
-Product.belongsTo(User, { foreignKey: "id_user", targetKey: "id" }); */
+// User.hasMany(Product, { foreignKey: "user_id", sourceKey: "id" });
+// Product.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
 /*
 Booking.hasOne(Property,{foreignKey:"autor_propId", sourceKey: "id"})
 Property.belongsTo(Booking,{foreignKey:"autor_propId", targetKey: "id" }) */
