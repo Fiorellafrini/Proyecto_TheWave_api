@@ -5,7 +5,7 @@ const getProductId = require("../controllers/getProductId");
 const getProducts = require("../controllers/getProducts");
 const postProducts = require("../controllers/postProducts");
 const byName = require("../controllers/productByName");
-const upDateActive = require("../controllers/putProduct");
+const upDateProduct = require("../controllers/putProduct");
 const updateProductActive = require ("../controllers/activeProduct")
 // const deleteProduct = require("../controllers/deleteProduct");
 
