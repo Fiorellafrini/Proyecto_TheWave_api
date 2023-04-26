@@ -37,6 +37,7 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
       email: user.email,
       name: user.name,
       lastName: user.lastName,
+      photo:user.photo
     };
     token = jwt.sign(payload, "process.env.JWT_SECRET_KEY", {
       expiresIn: "1d",

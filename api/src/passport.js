@@ -51,6 +51,7 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       const email = profile.emails[0].value;
+      const photo = profile.photos[0].value;
       try {
         let user = await User.findOne({ where: { email } });
         if (!user) {
@@ -61,6 +62,7 @@ passport.use(
             name,
             name,
             lastName,
+            photo,
           });
         }
         done(null, user);
