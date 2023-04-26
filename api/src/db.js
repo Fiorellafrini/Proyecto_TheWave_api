@@ -2,21 +2,21 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DB_DEPLOY } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DB_DEPLOY } =
+  process.env;
 
-// const sequelize = new Sequelize(
-//   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
-//   {
-//     logging: false, // set to console.log to see the raw SQL queries
-//     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-//   }
-// );
+const sequelize = new Sequelize(
+  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+  {
+    logging: false, // set to console.log to see the raw SQL queries
+    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  }
+);
 
-const sequelize = new Sequelize( DB_DEPLOY, {
-      logging: false, // set to console.log to see the raw SQL queries
-      native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-    }
-  );
+// const sequelize = new Sequelize(DB_DEPLOY, {
+//   logging: false, // set to console.log to see the raw SQL queries
+//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+// });
 
 const basename = path.basename(__filename);
 
@@ -72,11 +72,11 @@ Property.belongsTo(Sale,{as:"ventas",foreignKey:"saleId"}) */
 // Type.hasMany(Product, { foreignKey: "type" });
 // Product.belongsTo(Product, { foreignKey: "type", field: "name" });
 
-Type.hasMany(Product,{ foreignKey: "id_type" });
-Product.belongsTo(Type,{ foreignKey: "id_type" });
+Type.hasMany(Product, { foreignKey: "id_type" });
+Product.belongsTo(Type, { foreignKey: "id_type" });
 
-Brand.hasMany(Product, { foreignKey: "id_brand"});
-Product.belongsTo(Brand, { foreignKey: "id_brand",});
+Brand.hasMany(Product, { foreignKey: "id_brand" });
+Product.belongsTo(Brand, { foreignKey: "id_brand" });
 
 // sequelize.sync();
 
