@@ -10,6 +10,8 @@ const filterRouter = require("./filterRouter");
 const brandRouter = require("./brandRouter");
 const authRouter = require("./authRouter");
 const paymentsRouter = require("./PaymentRouter");
+const shopRouter = require("./shopRouter");
+
 
 const router = Router();
 
@@ -23,6 +25,8 @@ router.use("/order", orderRouter);
 router.use("/filter", filterRouter);
 router.use("/auth", authRouter);
 router.use("/brand", brandRouter);
+router.use("/shop", shopRouter);
+
 //mercadoPago
 router.use("/payment", paymentsRouter);
 

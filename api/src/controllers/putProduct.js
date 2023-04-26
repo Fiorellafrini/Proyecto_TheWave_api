@@ -56,9 +56,7 @@ const upDateActive = async (id, body) => {
     console.log(error);
     throw new Error("There was an error updating the product");
   }
-  await product.set(body); //lo actualiza
-  await product.save(); //lo guarda
-  return product;
+
 };
 
 module.exports = upDateActive;
