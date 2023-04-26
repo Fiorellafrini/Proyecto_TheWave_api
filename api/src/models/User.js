@@ -43,8 +43,13 @@ module.exports = (sequelize) => {
       },
       active: {
         type: DataTypes.BOOLEAN,
-        // allowNull: false,
-        defaultValue: false,
+        allowNull: false,
+        defaultValue: true, // por defecto, están activos
+      },
+      deletedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null,
       },
       photo: {
         type: DataTypes.TEXT,
@@ -52,7 +57,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      timestamps: false,
+      paranoid: true,
     }
   );
 };

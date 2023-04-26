@@ -29,7 +29,7 @@ const { Product } = require("../db");
 //     throw new Error("There was an error updating the product");
 //   }
 // };
-const upDateActive = async (id, body) => {
+const upDateProduct = async (id, body) => {
   const { name, imagen, size, price, description, stock, quantity, id_type, id_brand } = body;
 
   try {
@@ -46,7 +46,7 @@ const upDateActive = async (id, body) => {
         quantity,
         id_type,
         id_brand,
-        active: body.active,
+        // active: body.active,
       });
       return product;
     } else {
@@ -56,9 +56,7 @@ const upDateActive = async (id, body) => {
     console.log(error);
     throw new Error("There was an error updating the product");
   }
-  await product.set(body); //lo actualiza
-  await product.save(); //lo guarda
-  return product;
-};
+}
 
-module.exports = upDateActive;
+
+module.exports = upDateProduct;
