@@ -5,7 +5,9 @@ const getProductId = require("../controllers/getProductId");
 const getProducts = require("../controllers/getProducts");
 const postProducts = require("../controllers/postProducts");
 const byName = require("../controllers/productByName");
-const upDateActive = require("../controllers/putProduct");
+const upDateProduct = require("../controllers/putProduct");
+const updateProductActive = require ("../controllers/activeProduct")
+// const deleteProduct = require("../controllers/deleteProduct");
 
 //////////////////////////////////////// GET PRODUCT ID ///////////////////////////////////////////////////
 
@@ -126,7 +128,7 @@ productRouter.put("/:id/", async (req, res) => {
   const { id } = req.params;
   const { body } = req;
   try {
-    const product = await upDateActive(id, body);
+    const product = await upDateProduct(id, body);
     res.status(200).json(product);
   } catch (error) {
     res.status(400).json({ msg: error.message });
@@ -222,17 +224,41 @@ productRouter.put("/:id/", async (req, res) => {
 // });
 
 
-///////////////////////////////////////// DELETE ////////////////////////////////////////////////
+///////////////////////////////////////// Active/Inactice ////////////////////////////////////////////////
 
-productRouter.delete("/delete/:id", async (req, res) => {
+productRouter.put("/active/:id", async (req, res) => {
   const { id } = req.params;
+  const { active } = req.body;
   try {
-    const deleteProduct = await Product.findByPk(id);
-    deleteProduct.destroy();
-    res.status(200).json(deleteProduct);
+    const product = await Product.findOne({ where: { id: id } });
+    if (!product) {
+      return res.status(404).send({ error: "Product not found" });
+    }
+    const updatedProduct = await updateProductActive(id, active);
+    res.status(200).json(updatedProduct);
   } catch (error) {
-    res.status(404).send({ error: error.message });
+    res.status(500).send({ error: error.message });
   }
 });
+
+// productRouter.delete("/delete/:id", async (req, res) => {
+//   const { id } = req.params;
+//   try {
+//     const deleteProduct = await Product.findByPk(id);
+//     deleteProduct.destroy();
+//     res.status(200).json(deleteProduct);
+//   } catch (error) {
+//     res.status(404).send({ error: error.message });
+//   }
+// });
+
+
+
+
+
+
+
+
+
 
 module.exports = productRouter;
