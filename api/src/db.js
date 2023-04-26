@@ -44,7 +44,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { User, Type, Review, Product, Brand, Shop } = sequelize.models;
+const { User, Type, Review, Product, Brand, Shop, ShopDetail } = sequelize.models;
 
 // Aca vendrian las relaciones
 
@@ -56,14 +56,14 @@ Review.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
 
 //---------------------------------------------------------------------------------//
 
-User.belongsToMany(Product, { through: Shop });
-Product.belongsToMany(User, { through: Shop });
+User.hasMany(Shop, { foreignKey: 'user_id' }); 
+Shop.belongsTo(User, { foreignKey: 'user_id' });
 
-// Shop.belongsTo(User, { foreignKey: 'user_shop_id' }); // Agrega una clave foránea user_id a la tabla Shop
-// User.hasMany(Shop, { foreignKey: 'user_shop_id' }); // Define la relación inversa en el modelo User
+Product.hasMany(ShopDetail, { foreignKey: 'product_id' });
+ShopDetail.belongsTo(Product, { foreignKey: 'product_id' });
 
-// Shop.belongsTo(Product, { foreignKey: 'product_shop_id' }); // Agrega una clave foránea product_id a la tabla Shop
-// Product.hasMany(Shop, { foreignKey: 'product_shop_id' }); // Define la relación inversa en el modelo Product
+ShopDetail.belongsTo(Shop, { foreignKey: 'shop_id' });
+Shop.hasMany(ShopDetail, {foreignKey: 'shop_id'});
 
 //-----------------------------------------------------------------------------------//
 Type.hasMany(Product,{ foreignKey: "id_type" });
