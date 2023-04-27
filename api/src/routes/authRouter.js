@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken");
 const { passport, authenticate } = require("../passport.js");
 const router = Router();
 const {transporter} = require("../nodemailer/nodemailer.js");
-
 const {
   JWT_SECRET_KEY
 } = process.env;
@@ -76,7 +75,7 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
       </p><a href="https://proyecto-the-wave-client-1kip.vercel.app/SectionHome">Nuestro link</a>
 
 // `, // html body
-      });
+          });
   }
 );
 router.get("/auth/facebook", passport.authenticate("facebook"));
