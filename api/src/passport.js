@@ -62,7 +62,6 @@ passport.use(
           user = await User.create({
             email,
             name,
-            name,
             lastName,
             photo,
             password : hash
