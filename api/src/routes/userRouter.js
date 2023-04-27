@@ -6,6 +6,7 @@ const postUser = require("../controllers/postUser");
 const getAllUser = require ("../controllers/getAllUser")
 // const deleteUserId = require ('../controllers/postUser');
 const upDateUser = require("../controllers/putUser");
+const { updateUserActive }= require ("../controllers/activeUser")
 const {transporter} = require("../nodemailer/nodemailer.js");
 ///////////////////////////////////////////////GET ///////////////////////////////////////////////////////
 
@@ -78,7 +79,7 @@ userRouter.delete("/delete/:id", async (req, res) => {
 
 //////////////////////////////////////////////// PUT /////////////////////////////////////////////////////
 
-userRouter.put("/:id/active", async (req, res) => {
+userRouter.put("/:id", async (req, res) => {
   const id = req.params.id;
   const { name, lastName, email, active } = req.body;
 
@@ -94,6 +95,48 @@ userRouter.put("/:id/active", async (req, res) => {
     res.status(500).json({ mensaje: error.message });
   }
 });
+
+ 
+
+
+//////////////////////////////////////////////// active/inactive ///////////////////////////////////////////
+
+// userRouter.put("/active/:id", async (req, res) => {
+//   const { id } = req.params;
+//   const { active } = req.body;
+//   try {
+//     const user = await User.findOne({ where: { id: id } });
+//     if (!user) {
+//       return res.status(404).send({ error: "User not found" });
+//     }
+//     const updatedUser = await updateUserActive(id, active);
+//     res.status(200).json(updatedUser);
+//   } catch (error) {
+//     res.status(500).send({ error: error.message });
+//   }
+// });
+
+userRouter.put("/active/:id", async (req, res) => {
+  const { id } = req.params;
+  const { active } = req.body;
+
+  try {
+    const user = await User.findOne({ where: { id: id } });
+
+    if (!user) {
+      return res.status(404).send({ error: "User not found" });
+    }
+
+    await updateUserActive(id, active);
+
+    const updatedUser = await User.findOne({ where: { id: id } });
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+});
+
 
 
 
