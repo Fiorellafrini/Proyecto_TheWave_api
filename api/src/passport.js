@@ -51,6 +51,9 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       const email = profile.emails[0].value;
+      const photo = profile.photos[0].value;
+      const password = profile.id
+      const hash = await bcrypt.hash(password, 10);
       try {
         let user = await User.findOne({ where: { email } });
         if (!user) {
@@ -61,6 +64,8 @@ passport.use(
             name,
             name,
             lastName,
+            photo,
+            password : hash
           });
         }
         done(null, user);
