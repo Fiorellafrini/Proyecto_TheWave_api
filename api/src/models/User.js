@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 
+
 module.exports = (sequelize) => {
   sequelize.define(
     "User",
@@ -25,14 +26,14 @@ module.exports = (sequelize) => {
           isEmail: true,
         },
       },
-      password:{
-      type: DataTypes.STRING,
+      password: {
+        type: DataTypes.STRING,
       },
-      phone:{
+      phone: {
         type: DataTypes.STRING,
         unique: true,
       },
-      address:{
+      address: {
         type: DataTypes.STRING,
       },
       admin: {
@@ -49,6 +50,10 @@ module.exports = (sequelize) => {
         type: DataTypes.DATE,
         allowNull: true,
         defaultValue: null,
+      },
+      photo: {
+        type: DataTypes.TEXT,
+        defaultValue: "https://tinyurl.com/2a323tkf",
       },
     },
     {
