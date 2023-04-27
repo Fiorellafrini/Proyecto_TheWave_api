@@ -3,6 +3,8 @@ const { User } = require("../db.js");
 const jwt = require("jsonwebtoken");
 const { passport, authenticate } = require("../passport.js");
 const router = Router();
+const {transporter} = require("../nodemailer/nodemailer.js");
+
 router.post("/", passport.authenticate("local"), (req, res) => {
   try {
     let user = req.user;
@@ -29,8 +31,7 @@ router.post("/", passport.authenticate("local"), (req, res) => {
 });
 router.get("/google", passport.authenticate("google", { scope: ["email", "profile"] }));
 
-router.get("/google/callback",passport.authenticate("google", { failureRedirect: "/auth" }),
-  (req, res) => {
+router.get("/google/callback",passport.authenticate("google", { failureRedirect: "/auth" }), async (req, res) => {
     const user = req.user;
     payload = {
       id: user.id,
@@ -50,7 +51,28 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
       <script>
         window.opener.postMessage(${tokenStr}, 'http://localhost:3000')
       </script>
-    </html>`)
+    </html>`),
+          await transporter.sendMail({
+            from: "The Wave 🏄 <pfthewhave@gmail.com>", // sender address
+            to: `${user.email}`, // list of receivers
+            subject: "User created✔", // Subject line
+            text: "Hello world?", // plain text body
+            html: `<p>We welcome you <b> ${user.name} </b>  a The Wave, 
+      we are delighted to have you as a new user in our application. 
+      From now on, you will be able to enjoy all the functions and features we offer on our platform.
+      and features that we offer on our platform.At The Wave, we strive to provide an exceptional user
+      to provide an exceptional user experience, so if you have any questions or suggestions 
+      have any questions or suggestions on how to improve our service,
+      no dudes en ponerte en contacto con nosotros.Esperamos que disfrutes
+      your experience in our application and that you can take full advantage of all that The Wave has to offer.
+      everything The Wave has to offer.</br>
+      </br>
+      Thank you for joining us!</br>
+    Best regards, The Wave Team
+      </p><a href="https://proyecto-the-wave-client-1kip.vercel.app/SectionHome">Nuestro link</a>
+
+// `, // html body
+          });
   }
 );
 router.get("/auth/facebook", passport.authenticate("facebook"));
