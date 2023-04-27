@@ -56,7 +56,8 @@ const upDateProduct = async (id, body) => {
     console.log(error);
     throw new Error("There was an error updating the product");
   }
-}
+
+};
 
 
 module.exports = upDateProduct;
