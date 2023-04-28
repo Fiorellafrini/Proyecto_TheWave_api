@@ -1,19 +1,4 @@
 
-// const { Product } = require("../db");
-
-// const deleteProduct = async (id) => {
-//   try {
-//     const product = await Product.findOne({ where: { id } });
-//     if (product) {
-//       await product.update({ active: false });
-//       return "Product deleted";
-//     } else {
-//       return { error: "Product not found" };
-//     }
-//   } catch (error) {
-//     return { error: error.message };
-//   }
-// };
 const { Product } = require ("../db");
 
 const updateProductActive = async (id, active) => {

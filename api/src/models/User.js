@@ -31,7 +31,6 @@ module.exports = (sequelize) => {
       },
       phone: {
         type: DataTypes.STRING,
-        unique: true,
       },
       address: {
         type: DataTypes.STRING,
@@ -53,7 +52,7 @@ module.exports = (sequelize) => {
       },
       photo: {
         type: DataTypes.TEXT,
-        defaultValue: "https://tinyurl.com/2a323tkf",
+        allowNull: true,
       },
     },
     {
