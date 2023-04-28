@@ -4,7 +4,7 @@ const { User } = require("../db");
 const getUserId = require("../controllers/getUserId");
 const postUser = require("../controllers/postUser");
 const getAllUser = require ("../controllers/getAllUser")
-// const deleteUserId = require ('../controllers/postUser');
+const bcrypt = require("bcrypt");
 const upDateUser = require("../controllers/putUser");
 const { updateUserActive }= require ("../controllers/activeUser")
 const {transporter} = require("../nodemailer/nodemailer.js");
@@ -81,14 +81,17 @@ userRouter.delete("/delete/:id", async (req, res) => {
 
 userRouter.put("/:id", async (req, res) => {
   const id = req.params.id;
-  const { name, lastName, email, active } = req.body;
-
+  const { name, lastName, email, photo, password,confirmar_password, address, phone } = req.body;
   try {
+    const hash = await bcrypt.hash(password, 10);
     const user = await upDateUser(id, {
       name,
       lastName,
       email,
-      active,
+      photo,
+      password : hash,
+      address,
+      phone,
     });
     if (user) return res.status(200).json(user);
   } catch (error) {
