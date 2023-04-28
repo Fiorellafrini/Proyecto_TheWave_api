@@ -104,20 +104,7 @@ userRouter.put("/:id", async (req, res) => {
 
 //////////////////////////////////////////////// active/inactive ///////////////////////////////////////////
 
-// userRouter.put("/active/:id", async (req, res) => {
-//   const { id } = req.params;
-//   const { active } = req.body;
-//   try {
-//     const user = await User.findOne({ where: { id: id } });
-//     if (!user) {
-//       return res.status(404).send({ error: "User not found" });
-//     }
-//     const updatedUser = await updateUserActive(id, active);
-//     res.status(200).json(updatedUser);
-//   } catch (error) {
-//     res.status(500).send({ error: error.message });
-//   }
-// });
+
 
 userRouter.put("/active/:id", async (req, res) => {
   const { id } = req.params;

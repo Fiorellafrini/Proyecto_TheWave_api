@@ -21,7 +21,6 @@ const { User } = require("../db");
 
 
 
-  //       await product.set(body); 
-  // await product.save(); 
+
     
         module.exports= upDateUser;
