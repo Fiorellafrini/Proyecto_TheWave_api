@@ -47,12 +47,17 @@ module.exports = (sequelize) => {
       },
       active: {
         type: DataTypes.BOOLEAN,
-        // allowNull: false,
-        defaultValue: true,
+        allowNull: false,
+        defaultValue: true, // por defecto, los productos están activos
       },
+      // deletedAt: {
+      //   type: DataTypes.DATE,
+      //   allowNull: true,
+      //   defaultValue: null,
+      // },
     },
     {
-      timestamps: false,
+      paranoid: true,
     }
   );
 };

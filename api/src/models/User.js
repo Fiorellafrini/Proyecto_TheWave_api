@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 
+
 module.exports = (sequelize) => {
   sequelize.define(
     "User",
@@ -25,14 +26,13 @@ module.exports = (sequelize) => {
           isEmail: true,
         },
       },
-      password:{
-      type: DataTypes.STRING,
-      },
-      phone:{
+      password: {
         type: DataTypes.STRING,
-        unique: true,
       },
-      address:{
+      phone: {
+        type: DataTypes.STRING,
+      },
+      address: {
         type: DataTypes.STRING,
       },
       admin: {
@@ -42,12 +42,21 @@ module.exports = (sequelize) => {
       },
       active: {
         type: DataTypes.BOOLEAN,
-        // allowNull: false,
-        defaultValue: false,
+        allowNull: false,
+        defaultValue: true, // por defecto, están activos
+      },
+      deletedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null,
+      },
+      photo: {
+        type: DataTypes.TEXT,
+        allowNull: true,
       },
     },
     {
-      timestamps: false,
+      paranoid: true,
     }
   );
 };

@@ -5,7 +5,9 @@ const getProductId = require("../controllers/getProductId");
 const getProducts = require("../controllers/getProducts");
 const postProducts = require("../controllers/postProducts");
 const byName = require("../controllers/productByName");
-const upDateActive = require("../controllers/putProduct");
+const upDateProduct = require("../controllers/putProduct");
+const updateProductActive = require ("../controllers/activeProduct")
+// const deleteProduct = require("../controllers/deleteProduct");
 
 //////////////////////////////////////// GET PRODUCT ID ///////////////////////////////////////////////////
 
@@ -75,16 +77,7 @@ productRouter.get("/", async (req, res) => {
 
 ////////////////////////////////////////////// BY NAME ////////////////////////////////////////////////
 
-// productRouter.get("/", async (req, res) => {
-// const { name } = req.query;
-// console.log("Name value:", name);
-// try {
-// const products = await byName(name);
-//     res.status(200).json(products);
-//   } catch (error) {
-//     res.status(404).send({ error: error.message });
-//   }
-// });
+
 
 ////////////////////////////////////////// POST PRODUCTS /////////////////////////////////////////////////
 
@@ -100,139 +93,39 @@ productRouter.post("/", async (req, res) => {
 
 //////////////////////////////////////////////// PUT ACTIVE PRODUCT /////////////////////////////////////////////////
 
-// productRouter.put("/:id/", async (req, res) => {
-//   const id = req.params.id;
-//   const { name, imagen, size, price, active, stock, quantity, id_type, id_brand } = req.body;
 
-//   try {
-//     const product = await upDateActive(id, {
-//       name,
-//       imagen,
-//       size,
-//       price,
-//       active,
-//       stock,
-//       quantity,
-//       id_type,
-//       id_brand
-//     });
-//     if (product) return res.status(200).json(product);
-//   } catch (error) {
-//     res.status(500).json({ mensaje: error.message });
-//   }
-// });
 productRouter.put("/:id/", async (req, res) => {
 
   const { id } = req.params;
   const { body } = req;
   try {
-    const product = await upDateActive(id, body);
+    const product = await upDateProduct(id, body);
     res.status(200).json(product);
   } catch (error) {
     res.status(400).json({ msg: error.message });
   }
 });
 
-// const updatedPr = async (req, res) => {
-//   const { name, imagen, size, price, active, id_type, id_brand} = req.body;
-//   try {
-//     const updatedProper = await Product.update(
-//       {
-//         name,
-//         imagen,
-//         size,
-//         price,
-//         active,
-//         id_type,
-//         id_brand
-//       },
-//       {
-//         where: {
-//           id: req.params.id,
-//         },
-//       }
-//     );
-//     res.status(200).json("la propiedad fue modificada con exito");
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// };
-
-// // Llamar a la función updatedPr dentro del manejador de ruta
-// productRouter.put("/:id/", async (req, res) => {
-//   updatedPr(req, res);
-// });
 
 
 
-// productRouter.put("/:id/", async (req, res) => {
-//   const updatedPr = async (req, res) => {
-//     const { name, imagen, size, price, active, id_type, id_brand} = req.body;
-//     try {
-//       const updatedProper = await Product.update(
-//         {
-//         name,
-//         imagen,
-//         size,
-//         price,
-//         active,
-//         id_type,
-//         id_brand
-//         },
-//         {
-//           where: {
-//             id: req.params.id,
-//           },
-//         }
-//       );
-//       res.status(200).json("la propiedad  fue modificada con exito");
-//     } catch (error) {
-//       res.status(400).json({ error: error.message });
-//     }
-//   };
-// })
-//   const id = req.params.id;
-//   const { name, imagen, size, price, active, id_type, id_brand } = req.body;
+///////////////////////////////////////// Active/Inactice ////////////////////////////////////////////////
 
-//   try {
-//     const product = await upDateActive(id, {
-//       name,
-//       imagen,
-//       size,
-//       price,
-//       active,
-//       id_type,
-//       id_brand
-//     });
-//     if (product) return res.status(200).json(product);
-//   } catch (error) {
-//     res.status(500).json({ mensaje: error.message });
-//   }
-// });
-// productRouter.put("/:id/", async (req, res) => {
-//   const id = req.params.id;
-//  const { body } = req;
-
-//   try {
-//     const product = await upDateActive(id, body);
-//     if (product) return res.status(200).json(product);
-//   } catch (error) {
-//     res.status(500).json({ mensaje: error.message });
-//   }
-// });
-
-
-///////////////////////////////////////// DELETE ////////////////////////////////////////////////
-
-productRouter.delete("/delete/:id", async (req, res) => {
+productRouter.put("/active/:id", async (req, res) => {
   const { id } = req.params;
+  const { active } = req.body;
   try {
-    const deleteProduct = await Product.findByPk(id);
-    deleteProduct.destroy();
-    res.status(200).json(deleteProduct);
+    const product = await Product.findOne({ where: { id: id } });
+    if (!product) {
+      return res.status(404).send({ error: "Product not found" });
+    }
+    const updatedProduct = await updateProductActive(id, active);
+    res.status(200).json(updatedProduct);
   } catch (error) {
-    res.status(404).send({ error: error.message });
+    res.status(500).send({ error: error.message });
   }
 });
+
+
 
 module.exports = productRouter;

@@ -13,7 +13,7 @@ function authenticateToken(req, res, next) {
     jwt.verify(token, JWT_SECRET_KEY, (err, user) => {
         if (err || !user ||user.exp < Date.now() / 1000) {
             // El token ha expirado
-            return  res.status(403).send("El token no es válido.")
+            return  res.status(403).send("This token is invalid.")
         }
         req.user = user
         next() 

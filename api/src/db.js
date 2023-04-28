@@ -3,7 +3,7 @@ const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DB_DEPLOY } = process.env;
-
+//-------------------------------- CONFIGURACION PARA TRABAJAR LOCALMENTE-----------------------------------
 // const sequelize = new Sequelize(
 //   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
 //   {
@@ -11,7 +11,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DB_DEPLOY } = process.e
 //     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 //   }
 // );
-
+// -------------------------------------CONFIGURACION PARA EL DEPLOY---------------------------------------------------------------------
 const sequelize = new Sequelize( DB_DEPLOY, {
       logging: false, // set to console.log to see the raw SQL queries
       native: false, // lets Sequelize know we can use pg-native for ~30% more speed
@@ -44,7 +44,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { User, Type, Review, Product, Brand } = sequelize.models;
+const { User, Type, Review, Product, Brand, Shop, ShopDetail } = sequelize.models;
 
 // Aca vendrian las relaciones
 
@@ -53,6 +53,8 @@ Review.belongsTo(Product, { foreignKey: "product_id", targetKey: "id" });
 
 User.hasMany(Review, { foreignKey: "user_id", sourceKey: "id" });
 Review.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
+
+
 //----------------------
 // User.hasMany(Product, { foreignKey: "user_id", sourceKey: "id" });
 // Product.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
@@ -63,22 +65,26 @@ Property.belongsTo(Booking,{foreignKey:"autor_propId", targetKey: "id" }) */
 /* Course.hasMany(Booking,{ foreignKey: "autor_saleId", sourceKey: "id" })
 Booking.belongsTo(Sale,{ foreignKey: "autor_saleId", targetKey: "id" }) */
 
-/* Sale.hasOne(Property,{as:"propiedades",foreignKey:"saleId"})
-Property.belongsTo(Sale,{as:"ventas",foreignKey:"saleId"}) */
-//---------------------
-// User.belongsToMany(Course,{through:"course_user"});
-// Course.belongsToMany(User, {through:"course_user"});
 
-// Type.hasMany(Product, { foreignKey: "type" });
-// Product.belongsTo(Product, { foreignKey: "type", field: "name" });
+//---------------------------------------------------------------------------------//
 
+User.hasMany(Shop, { foreignKey: 'user_id' }); 
+Shop.belongsTo(User, { foreignKey: 'user_id' });
+
+Product.hasMany(ShopDetail, { foreignKey: 'product_id' });
+ShopDetail.belongsTo(Product, { foreignKey: 'product_id' });
+
+ShopDetail.belongsTo(Shop, { foreignKey: 'shop_id' });
+Shop.hasMany(ShopDetail, {foreignKey: 'shop_id'});
+
+//-----------------------------------------------------------------------------------//
 Type.hasMany(Product,{ foreignKey: "id_type" });
 Product.belongsTo(Type,{ foreignKey: "id_type" });
 
 Brand.hasMany(Product, { foreignKey: "id_brand"});
 Product.belongsTo(Brand, { foreignKey: "id_brand",});
-
-// sequelize.sync();
+ //-----------------------------------------------------------------------------------//
+ 
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
