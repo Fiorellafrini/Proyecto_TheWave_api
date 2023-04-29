@@ -3,7 +3,7 @@ const { User} = require("../db");
 
 const getAllUser = async () => {
     try {
-      const users = await User.findAll({ where: { active: true } });
+      const users = await User.findAll();
       return users;
     } catch (error) {
       throw new Error(error.message);
