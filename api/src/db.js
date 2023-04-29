@@ -54,6 +54,18 @@ Review.belongsTo(Product, { foreignKey: "product_id", targetKey: "id" });
 User.hasMany(Review, { foreignKey: "user_id", sourceKey: "id" });
 Review.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
 
+
+//----------------------
+// User.hasMany(Product, { foreignKey: "user_id", sourceKey: "id" });
+// Product.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
+/*
+Booking.hasOne(Property,{foreignKey:"autor_propId", sourceKey: "id"})
+Property.belongsTo(Booking,{foreignKey:"autor_propId", targetKey: "id" }) */
+//------------
+/* Course.hasMany(Booking,{ foreignKey: "autor_saleId", sourceKey: "id" })
+Booking.belongsTo(Sale,{ foreignKey: "autor_saleId", targetKey: "id" }) */
+
+
 //---------------------------------------------------------------------------------//
 
 User.hasMany(Shop, { foreignKey: 'user_id' }); 
