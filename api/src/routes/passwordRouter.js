@@ -22,7 +22,7 @@ router.post("/forgot", async (req, res) => {
     id: user.dataValues.id,
   };
   const token = jwt.sign(payload, secret, { expiresIn: "15m" });
-  const link = `http://localhost:3000/reset-password/${user.dataValues.id}/${token}`;
+  const link = `https://proyecto-the-wave-client-1kip.vercel.app/reset-password/${user.dataValues.id}/${token}`;
   //enviar el link por nodemailer
   await transporter.sendMail({
     from: "The Wave 🏄 <pfthewhave@gmail.com>", // sender address
