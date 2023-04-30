@@ -6,6 +6,14 @@ module.exports = (sequelize) => {
   sequelize.define(
     "Review",
     {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        autoIncrement: true,
+        unique: true,
+        field: "id_review",
+      },
       comment: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -13,11 +21,11 @@ module.exports = (sequelize) => {
       rating: {
         // REVISAR
         type: DataTypes.INTEGER,
-        allowNull: true, // porque puede ser que aun no este calificada
+        allowNull: false, // porque puede ser que aun no este calificada
       },
     },
     {
-      timestamps: false,
+      paranoid: true,
     }
   );
 };
