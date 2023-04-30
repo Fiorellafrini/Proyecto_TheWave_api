@@ -38,8 +38,7 @@ router.post("/forgot", async (req, res) => {
       <body>
         <p>Hello <b> ${user.dataValues.name} </b>,</p>
         <p>We received a request to reset the password for your account in The Wave. <br/>
-        To proceed with this request, please click on the following link within the next hour:</p>
-        <a href=${link}>Reset password</a>
+        To proceed with this request, please click on the following link within the next 15 minutes: </p><a href=${link}>Reset password</a>
         <p>If you did not request to reset your password, please ignore this message and your account will remain unchanged.</p>
         <p>Best regards,</p>
         <p>The Wave Nautical Store 🏄 </p>
