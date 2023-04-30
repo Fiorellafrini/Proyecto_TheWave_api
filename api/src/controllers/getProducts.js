@@ -28,7 +28,7 @@ const getProducts = async (sort, filters) => {
     orderBy = [[fn("TRIM", col("name")), "DESC"]];
   }
 
-  let where = { active: true }; // me muestra solo los activos
+  let where = {}; // me muestra solo los activos
 
   // Aplica los filtros recibidos en el URL al objeto "where"
   if (filters && filters.type) {

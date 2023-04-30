@@ -52,15 +52,16 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
       <body>
       </body>
       <script>
-        window.opener.postMessage(${tokenStr}, 'http://localhost:3000')
+       window.opener.postMessage(${tokenStr}, 'http://localhost:3000')
+
       </script>
     </html>`),
-          await transporter.sendMail({
-            from: "The Wave 🏄 <pfthewhave@gmail.com>", // sender address
-            to: `${user.email}`, // list of receivers
-            subject: "User created✔", // Subject line
-            text: "Hello world?", // plain text body
-            html: `<p>We welcome you <b> ${user.name} </b>  a The Wave, 
+      await transporter.sendMail({
+        from: "The Wave 🏄 <pfthewhave@gmail.com>", // sender address
+        to: `${user.email}`, // list of receivers
+        subject: "User created✔", // Subject line
+        text: "Hello world?", // plain text body
+        html: `<p>We welcome you <b> ${user.name} </b>  a The Wave, 
       we are delighted to have you as a new user in our application. 
       From now on, you will be able to enjoy all the functions and features we offer on our platform.
       and features that we offer on our platform.At The Wave, we strive to provide an exceptional user
@@ -75,7 +76,7 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
       </p><a href="https://proyecto-the-wave-client-1kip.vercel.app/SectionHome">Nuestro link</a>
 
 // `, // html body
-          });
+      });
   }
 );
 router.get("/auth/facebook", passport.authenticate("facebook"));

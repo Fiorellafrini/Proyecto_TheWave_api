@@ -2,22 +2,21 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DB_DEPLOY } =
-  process.env;
-
-// const sequelize = new Sequelize(
-//   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
-//   {
-//     logging: false, // set to console.log to see the raw SQL queries
-//     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-//   }
-// );
-
-const sequelize = new Sequelize( `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
-      logging: false, // set to console.log to see the raw SQL queries
-      native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-    }
-  );
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DB_DEPLOY } = process.env;
+//-------------------------------- CONFIGURACION PARA TRABAJAR LOCALMENTE-----------------------------------
+const sequelize = new Sequelize(
+  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+  {
+    logging: false, // set to console.log to see the raw SQL queries
+    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  }
+);
+// -------------------------------------CONFIGURACION PARA EL DEPLOY---------------------------------------------------------------------
+// const sequelize = new Sequelize( DB_DEPLOY, {
+//       logging: false, // set to console.log to see the raw SQL queries
+//       native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+//     }
+//   );
 
 const basename = path.basename(__filename);
 
@@ -49,19 +48,17 @@ const { User, Type, Review, Product, Brand, Shop, ShopDetail } = sequelize.model
 
 // Aca vendrian las relaciones
 
-Product.hasMany(Review, { foreignKey: "product_id", sourceKey: "id" });
-Review.belongsTo(Product, { foreignKey: "product_id", targetKey: "id" });
-
-User.hasMany(Review, { foreignKey: "user_id", sourceKey: "id" });
-Review.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
-
+User.hasMany(Review, { foreignKey: 'id_user' });
+Product.hasMany(Review, { foreignKey: 'id_product' });
+Review.belongsTo(User, { foreignKey: 'id_user' });
+Review.belongsTo(Product, { foreignKey: 'id_product' });
 //---------------------------------------------------------------------------------//
 
-User.hasMany(Shop, { foreignKey: 'user_id' }); 
-Shop.belongsTo(User, { foreignKey: 'user_id' });
+User.hasMany(Shop, { foreignKey: 'id_user' }); 
+Shop.belongsTo(User, { foreignKey: 'id_user' });
 
-Product.hasMany(ShopDetail, { foreignKey: 'product_id' });
-ShopDetail.belongsTo(Product, { foreignKey: 'product_id' });
+Product.hasMany(ShopDetail, { foreignKey: 'id' });
+ShopDetail.belongsTo(Product, { foreignKey: 'id' });
 
 ShopDetail.belongsTo(Shop, { foreignKey: 'shop_id' });
 Shop.hasMany(ShopDetail, {foreignKey: 'shop_id'});

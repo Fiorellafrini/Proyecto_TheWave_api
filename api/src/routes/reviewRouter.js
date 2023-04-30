@@ -6,7 +6,7 @@ const router = Router();
 router.post("/", async (req, res) => {
 
     const addReview = await createReview(req.body)
-    const { content, rating, idProperty, idUser } = req.body
+    const { comment, rating, idProduct, idUser } = req.body
   try {
     res.status(201).json(addReview);
   } catch (error) {
@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
     const comments = await getAllComments();
     try {
-      res.status(200).json({ comentarios: comments });
+      res.status(200).json(comments);
     } catch (error) {
       res.status(400).json({ Error: error.message });
     }
