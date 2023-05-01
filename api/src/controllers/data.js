@@ -284,20 +284,6 @@ let data = [
   {
     brands_id: 10,
     type_id: 2,
-    size: "XXL",
-    price: "11150",
-    user_id: "",
-    imagen: [
-      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873235/images/uc_vaeqrt.png",
-    ],
-    name: "O'neill Men's Hammer 2mm Wetsuit - Slate / Black",
-    stock: 10,
-    description:
-      "This O'neill wetsuit is perfect for men looking for a durable and comfortable option for water activities such as surfing and paddle boarding. With a 2mm neoprene construction and a snug design, it will keep you comfortable and protected in the water.",
-  },
-  {
-    brands_id: 10,
-    type_id: 2,
     size: "M",
     price: "10000",
     user_id: "",
