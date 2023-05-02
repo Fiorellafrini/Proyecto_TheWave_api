@@ -81,7 +81,7 @@ userRouter.delete("/delete/:id", async (req, res) => {
 
 userRouter.put("/:id", async (req, res) => {
   const id = req.params.id;
-  const { name, lastName, email, photo, password,confirmar_password, address, phone } = req.body;
+  const { name, lastName, email, photo, password, address, phone } = req.body;
   try {
     const hash = await bcrypt.hash(password, 10);
     const user = await upDateUser(id, {
