@@ -34,7 +34,8 @@ router.post("/", passport.authenticate("local"), (req, res) => {
       token: token,
       user: payload,
     });
-  } catch (error) {
+  } catch (error) { 
+    console.log(error)
     res.status(500).json({ error: "Ha ocurrido un error." });
   }
 });
