@@ -31,7 +31,7 @@ router.use("/auth", authRouter);
 router.use("/brand", brandRouter);
 router.use("/shop", shopRouter);
 router.use("/shop_detail", shopDetailRouter);
-router.use("/fav", favRouter);
+router.use("/favorites", favRouter);
 
 
 

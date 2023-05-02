@@ -60,21 +60,21 @@ let data = [
     description:
       "If you are an advanced user looking for a high-quality stand up paddle board, this is a great option. This board from the brand Vesl offers excellent performance on the water, thanks to its sturdy construction and innovative design.",
   },
-  {
-    brands_id: 3,
-    type_id: 3,
-    size: "XL",
-    price: "10500",
-    user_id: "",
-    imagen: [
-      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871688/images/uc_b5eesv.png",
-      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871772/images/uc_cdzw1s.png",
-    ],
-    name: "Stand Up Paddle Board Vesl-Hunter",
-    stock: 10,
-    description:
-      "The Vesl-Hunter Stand Up Paddleboard is the perfect choice for those looking to venture into the world of paddle surfing. With a sturdy and durable construction, this board provides excellent stability and maneuverability on the water. Additionally, its modern and eye-catching design makes it the ideal choice for those looking to stand out in the sea. Get yours now and start exploring new water routes in style!",
-  },
+  // {
+  //   brands_id: 3,
+  //   type_id: 3,
+  //   size: "XL",
+  //   price: "10500",
+  //   user_id: "",
+  //   imagen: [
+  //     "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871688/images/uc_b5eesv.png",
+  //     "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681871772/images/uc_cdzw1s.png",
+  //   ],
+  //   name: "Stand Up Paddle Board Vesl-Hunter",
+  //   stock: 10,
+  //   description:
+  //     "The Vesl-Hunter Stand Up Paddleboard is the perfect choice for those looking to venture into the world of paddle surfing. With a sturdy and durable construction, this board provides excellent stability and maneuverability on the water. Additionally, its modern and eye-catching design makes it the ideal choice for those looking to stand out in the sea. Get yours now and start exploring new water routes in style!",
+  // },
   {
     brands_id: 4,
     type_id: 4,
@@ -280,20 +280,6 @@ let data = [
     stock: 10,
     description:
       "If you are a woman who loves water activities, the Orca Synergy wetsuit is an excellent choice. With a 3mm neoprene construction and a snug design, it will keep you warm and comfortable in the water.",
-  },
-  {
-    brands_id: 10,
-    type_id: 2,
-    size: "XXL",
-    price: "11150",
-    user_id: "",
-    imagen: [
-      "https://res.cloudinary.com/djngalumm/image/upload/f_auto,q_auto/v1681873235/images/uc_vaeqrt.png",
-    ],
-    name: "O'neill Men's Hammer 2mm Wetsuit - Slate / Black",
-    stock: 10,
-    description:
-      "This O'neill wetsuit is perfect for men looking for a durable and comfortable option for water activities such as surfing and paddle boarding. With a 2mm neoprene construction and a snug design, it will keep you comfortable and protected in the water.",
   },
   {
     brands_id: 10,
