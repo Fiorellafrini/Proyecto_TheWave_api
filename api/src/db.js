@@ -2,7 +2,8 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DB_DEPLOY } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DB_DEPLOY } =
+  process.env;
 //-------------------------------- CONFIGURACION PARA TRABAJAR LOCALMENTE-----------------------------------
 const sequelize = new Sequelize(
   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
@@ -44,34 +45,33 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { User, Type, Review, Product, Brand, Shop, ShopDetail, Favorite } = sequelize.models;
+const { User, Type, Review, Product, Brand, Shop, ShopDetail, Favorite } =
+  sequelize.models;
 
 // Aca vendrian las relaciones
 
-Product.hasMany(Review, { foreignKey: "product_id", sourceKey: "id" });
-Review.belongsTo(Product, { foreignKey: "product_id", targetKey: "id" });
-
-User.hasMany(Review, { foreignKey: "user_id", sourceKey: "id" });
-Review.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
-
+User.hasMany(Review, { foreignKey: "id_user" });
+Product.hasMany(Review, { foreignKey: "id_product" });
+Review.belongsTo(User, { foreignKey: "id_user" });
+Review.belongsTo(Product, { foreignKey: "id_product" });
 //---------------------------------------------------------------------------------//
 
-User.hasMany(Shop, { foreignKey: 'id_user' }); 
-Shop.belongsTo(User, { foreignKey: 'id_user' });
+User.hasMany(Shop, { foreignKey: "id_user" });
+Shop.belongsTo(User, { foreignKey: "id_user" });
 
-Product.hasMany(ShopDetail, { foreignKey: 'id_product' });
-ShopDetail.belongsTo(Product, { foreignKey: 'id_product' });
+Product.hasMany(ShopDetail, { foreignKey: "id_product" });
+ShopDetail.belongsTo(Product, { foreignKey: "id_product" });
 
-ShopDetail.belongsTo(Shop, { foreignKey: 'shop_id' });
-Shop.hasMany(ShopDetail, {foreignKey: 'shop_id'});
+ShopDetail.belongsTo(Shop, { foreignKey: "shop_id" });
+Shop.hasMany(ShopDetail, { foreignKey: "shop_id" });
 
 //-----------------------------------------------------------------------------------//
-Type.hasMany(Product,{ foreignKey: "id_type" });
-Product.belongsTo(Type,{ foreignKey: "id_type" });
+Type.hasMany(Product, { foreignKey: "id_type" });
+Product.belongsTo(Type, { foreignKey: "id_type" });
 
-Brand.hasMany(Product, { foreignKey: "id_brand"});
-Product.belongsTo(Brand, { foreignKey: "id_brand",});
- //-----------------------------------------------------------------------------------//
+Brand.hasMany(Product, { foreignKey: "id_brand" });
+Product.belongsTo(Brand, { foreignKey: "id_brand" });
+//-----------------------------------------------------------------------------------//
 
  User.hasMany(Favorite, { foreignKey: 'id_user' }); 
 Favorite.belongsTo(User, { foreignKey: 'id_user' });
