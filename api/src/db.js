@@ -48,17 +48,19 @@ const { User, Type, Review, Product, Brand, Shop, ShopDetail, Favorite } = seque
 
 // Aca vendrian las relaciones
 
-User.hasMany(Review, { foreignKey: 'id_user' });
-Product.hasMany(Review, { foreignKey: 'id_product' });
-Review.belongsTo(User, { foreignKey: 'id_user' });
-Review.belongsTo(Product, { foreignKey: 'id_product' });
+Product.hasMany(Review, { foreignKey: "product_id", sourceKey: "id" });
+Review.belongsTo(Product, { foreignKey: "product_id", targetKey: "id" });
+
+User.hasMany(Review, { foreignKey: "user_id", sourceKey: "id" });
+Review.belongsTo(User, { foreignKey: "user_id", targetKey: "id" });
+
 //---------------------------------------------------------------------------------//
 
 User.hasMany(Shop, { foreignKey: 'id_user' }); 
 Shop.belongsTo(User, { foreignKey: 'id_user' });
 
-Product.hasMany(ShopDetail, { foreignKey: 'id' });
-ShopDetail.belongsTo(Product, { foreignKey: 'id' });
+Product.hasMany(ShopDetail, { foreignKey: 'id_product' });
+ShopDetail.belongsTo(Product, { foreignKey: 'id_product' });
 
 ShopDetail.belongsTo(Shop, { foreignKey: 'shop_id' });
 Shop.hasMany(ShopDetail, {foreignKey: 'shop_id'});
@@ -71,8 +73,8 @@ Brand.hasMany(Product, { foreignKey: "id_brand"});
 Product.belongsTo(Brand, { foreignKey: "id_brand",});
  //-----------------------------------------------------------------------------------//
 
- User.hasMany(Favorite, { foreignKey: 'user_id' }); 
-Favorite.belongsTo(User, { foreignKey: 'user_id' });
+ User.hasMany(Favorite, { foreignKey: 'id_user' }); 
+Favorite.belongsTo(User, { foreignKey: 'id_user' });
 
 Product.hasMany(Favorite, { foreignKey: 'product_id' });
 Favorite.belongsTo(Product, { foreignKey: 'product_id' });

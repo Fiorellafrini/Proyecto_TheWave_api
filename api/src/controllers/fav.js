@@ -7,7 +7,7 @@ async function addToFavorites(req, res) {
     const user = await User.findByPk(userId);
 
     const favorite = await Favorite.create({
-      user_id: userId,
+      id_user: userId,
       product_id: productId,
     });
 
@@ -20,8 +20,8 @@ async function addToFavorites(req, res) {
 
 //---------------DELETE FAV-----------------------------------------------------//
 async function removeFromFavorites(req, res) {
-  const { user_id, product_id } = req.params;
-  Favorite.destroy({ where: { user_id: user_id, product_id: product_id } })
+  const { id_user, product_id } = req.params;
+  Favorite.destroy({ where: { id_user: id_user, product_id: product_id } })
     .then(() => {
       res.status(200).send({ product_id: product_id });
     })
@@ -34,13 +34,13 @@ async function removeFromFavorites(req, res) {
 
 async function getFavorites(req, res) {
   try {
-    const { user_id } = req.params;
-    const user = await User.findByPk(user_id);
+    const { id_user } = req.params;
+    const user = await User.findByPk(id_user);
     // if (!user) {
     //   return res.status(404).json({ message: "User not found" });
     // }
     const favorites = await Favorite.findAll({
-      where: { user_id: user_id },
+      where: { id_user: id_user },
       include: [{ model: Product }],
     });
     return res.json(favorites);
