@@ -6,12 +6,12 @@ const { Shop, ShopDetail, User, Product } = require('../db');
 async function shopProduct(req, res) {
 
   // createOrder: async (req, res) => {
-    const { date, user_id } = req.body;
+    const { date, id_user } = req.body;
 
     try {
       const order = await Shop.create({
         date,
-        user_id,
+        id_user,
       });
 
       return res.status(200).json({ order });

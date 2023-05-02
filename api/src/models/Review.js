@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
         field: "id_review",
       },
       comment: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
       rating: {
