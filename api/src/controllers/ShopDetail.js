@@ -2,15 +2,14 @@ const { ShopDetail, Shop, Product } = require('../db');
 
 
 async function createShopDetail(req, res) {
-  const { quantity, price, product_id, shop_id } = req.body;
-
-  console.log('shop_id:', shop_id);
-
+  console.log(req.body);
+  const { quantity, price, id_product, shop_id } = req.body;
   try {
+
     const newShopDetail = await ShopDetail.create({
       quantity,
       price,
-      product_id,
+      id_product,
       shop_id
     });
     res.status(201).json(newShopDetail);
