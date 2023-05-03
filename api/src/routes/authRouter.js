@@ -60,7 +60,7 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
       <body>
       </body>
       <script>
-       window.opener.postMessage(${tokenStr}, 'http://localhost:3000')
+       window.opener.postMessage(${tokenStr}, 'http://https://proyecto-the-wave-client-1kip.vercel.app')
 
       </script>
     </html>`),
