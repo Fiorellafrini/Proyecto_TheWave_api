@@ -22,9 +22,7 @@ router.post("/", passport.authenticate("local"), (req, res) => {
     //Crear el token JWT con los datos del usuario.
     const payload = {
       id: user.id,
-      email: user.email,
-      name: user.name,
-      lastName: user.lastName,
+      email: user.email
     };
     const token = jwt.sign(payload, "contraseña ", {
       expiresIn: "1d",

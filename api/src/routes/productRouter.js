@@ -114,6 +114,7 @@ productRouter.put("/:id/", async (req, res) => {
 productRouter.put("/active/:id", async (req, res) => {
   const { id } = req.params;
   const { active } = req.body;
+  console.log(req.body)
   try {
     const product = await Product.findOne({ where: { id: id } });
     if (!product) {
