@@ -9,6 +9,7 @@ module.exports = (sequelize) => {
         type: DataTypes.UUID,
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4,
+        field: "id_user"
       },
       name: {
         type: DataTypes.STRING,
@@ -31,9 +32,11 @@ module.exports = (sequelize) => {
       },
       phone: {
         type: DataTypes.STRING,
+        defaultValue: "0000000000",
       },
       address: {
         type: DataTypes.STRING,
+        defaultValue: "calle falsa123",
       },
       admin: {
         type: DataTypes.BOOLEAN,
@@ -53,6 +56,8 @@ module.exports = (sequelize) => {
       photo: {
         type: DataTypes.TEXT,
         allowNull: true,
+        defaultValue:
+          "https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png",
       },
     },
     {

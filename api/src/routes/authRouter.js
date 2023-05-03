@@ -10,12 +10,19 @@ const {
 router.post("/", passport.authenticate("local"), (req, res) => {
   try {
     let user = req.user;
+
+    /////////// ESTO AGREGO PARA LA VERIFICACION DE ACTIVO O INACTIVO /////////////////////////
+    if (!user.active) {
+      // Si el usuario no está activo, enviar una respuesta de error.
+      res.status(401).json({ error: "El usuario ha sido dado de baja." });
+      return;
+    }
+ /////////////////////////////////////////////////////////////////////////////////////////////////
+
     //Crear el token JWT con los datos del usuario.
     const payload = {
       id: user.id,
-      email: user.email,
-      name: user.name,
-      lastName: user.lastName,
+      email: user.email
     };
     const token = jwt.sign(payload, "contraseña ", {
       expiresIn: "1d",
@@ -25,7 +32,8 @@ router.post("/", passport.authenticate("local"), (req, res) => {
       token: token,
       user: payload,
     });
-  } catch (error) {
+  } catch (error) { 
+    console.log(error)
     res.status(500).json({ error: "Ha ocurrido un error." });
   }
 });
@@ -52,9 +60,7 @@ router.get("/google/callback",passport.authenticate("google", { failureRedirect:
       <body>
       </body>
       <script>
-
-        window.opener.postMessage(${tokenStr}, 'vhttps://proyecto-the-wave-client-1kip.vercel.app')
-        window.opener.postMessage(${tokenStr}, 'https://proyecto-the-wave-client-1kip.vercel.app')
+       window.opener.postMessage(${tokenStr}, 'http://https://proyecto-the-wave-client-1kip.vercel.app')
 
       </script>
     </html>`),

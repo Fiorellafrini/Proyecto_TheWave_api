@@ -1,33 +1,22 @@
-const { Shop, ShopDetail, User, Product } = require('../db');
-
+const { Shop, ShopDetail, User, Product } = require("../db");
 
 //---------------------------------CREO UNA ORDER EN DB---------------------------------------------//
 // const orderController = {
 async function shopProduct(req, res) {
+  const { date, user_id } = req.body;
 
-  // createOrder: async (req, res) => {
-    const { date, user_id } = req.body;
-
-    try {
-      const order = await Shop.create({
-        date,
-        user_id,
-      });
-
-      return res.status(200).json({ order });
-    } catch (error) {
-
-      return res.status(400).json({ error:error.message});
-    }
+  try {
+    const order = await Shop.create({
+      date,
+      id_user: user_id,
+    });
+    return res.status(200).json({ order });
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
   }
-
-
-
-
+}
 
 //--------------------------------------VER TODAS LAS COMPRAS-------------------------------------------------------------//
-
-
 async function getAllShop(req, res) {
   try {
     const compras = await Shop.findAll({
@@ -41,7 +30,5 @@ async function getAllShop(req, res) {
     res.status(400).json({ error: error.message });
   }
 }
-
-
 
 module.exports = { shopProduct, getAllShop };
