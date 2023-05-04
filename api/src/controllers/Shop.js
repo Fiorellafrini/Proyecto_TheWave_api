@@ -1,7 +1,5 @@
 const { Shop, ShopDetail, User, Product } = require("../db");
-
 //---------------------------------CREO UNA ORDER EN DB---------------------------------------------//
-// const orderController = {
 async function shopProduct(req, res) {
   const { date, user_id } = req.body;
 
@@ -15,7 +13,6 @@ async function shopProduct(req, res) {
     return res.status(400).json({ error: error.message });
   }
 }
-
 //--------------------------------------VER TODAS LAS COMPRAS-------------------------------------------------------------//
 async function getAllShop(req, res) {
   try {
