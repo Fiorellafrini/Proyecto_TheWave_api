@@ -13,6 +13,7 @@ const paymentsRouter = require("./PaymentRouter");
 const passwordRouter = require("./passwordRouter");
 const shopRouter = require("./shopRouter");
 const shopDetailRouter = require("./shopDetailRouter");
+const favRouter = require("./favRouter")
 
 const router = Router();
 
@@ -28,6 +29,8 @@ router.use("/auth", authRouter);
 router.use("/brand", brandRouter);
 router.use("/shop", shopRouter);
 router.use("/shop_detail", shopDetailRouter);
+router.use("/favorites", favRouter);
+
 
 //mercadoPago
 router.use("/password", passwordRouter);
