@@ -50,6 +50,7 @@ module.exports = (sequelize) => {
         allowNull: false,
         defaultValue: true, // por defecto, los productos están activos
       },
+    
       // deletedAt: {
       //   type: DataTypes.DATE,
       //   allowNull: true,

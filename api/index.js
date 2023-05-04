@@ -24,8 +24,8 @@ const  getType = require("./src/controllers/getType.js");
 const getProducts = require("./src/controllers/getProducts.js");
 const {PORT} = process.env
 
-// Syncing all the models at once.
-conn.sync({alter: true }).then(async () => {
+// Syncing all the models at once. alter: true
+conn.sync({force: true }).then(async () => {
   server.listen(PORT, () => {
     console.log('%s listening at', process.env.PORT)
     // console.log("Api listening on http://localhost:3001"); // eslint-disable-line no-console
