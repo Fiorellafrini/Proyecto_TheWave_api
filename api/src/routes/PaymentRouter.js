@@ -16,7 +16,7 @@ paymentsRouter.post("/", (req, res) => {
       unit_price: product.price,
     })),
     back_urls: {
-      success: "https://proyecto-the-wave-client-1kip.vercel.app/SectionHome",
+      success: "https://proyecto-the-wave-client-1kip.vercel.app/FeedBack",
       failure: "https://proyecto-the-wave-client-1kip.vercel.app/SectionHome",
       pending: "",
     },
