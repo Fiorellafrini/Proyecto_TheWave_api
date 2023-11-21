@@ -24,7 +24,7 @@ router.post("/", passport.authenticate("local"), (req, res) => {
       id: user.id,
       email: user.email
     };
-    const token = jwt.sign(payload, "contraseña ", {
+    const token = jwt.sign(payload, JWT_SECRET_KEY, {
       expiresIn: "1d",
     });
 

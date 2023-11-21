@@ -15,8 +15,6 @@ const shopRouter = require("./shopRouter");
 const shopDetailRouter = require("./shopDetailRouter");
 const favRouter = require("./favRouter")
 
-
-
 const router = Router();
 
 // Rutas
@@ -34,9 +32,8 @@ router.use("/shop_detail", shopDetailRouter);
 router.use("/favorites", favRouter);
 
 
-
 //mercadoPago
+router.use("/password", passwordRouter);
 router.use("/payment", paymentsRouter);
-router.use("/password", passwordRouter)
 
 module.exports = router;

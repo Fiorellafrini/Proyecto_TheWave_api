@@ -36,7 +36,6 @@ module.exports = (sequelize) => {
       },
       address: {
         type: DataTypes.STRING,
-        defaultValue: "calle falsa123",
       },
       admin: {
         type: DataTypes.BOOLEAN,
@@ -46,7 +45,7 @@ module.exports = (sequelize) => {
       active: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-        defaultValue: true, // por defecto, están activos
+        defaultValue: true, 
       },
       deletedAt: {
         type: DataTypes.DATE,
@@ -57,7 +56,7 @@ module.exports = (sequelize) => {
         type: DataTypes.TEXT,
         allowNull: true,
         defaultValue:
-          "https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png",
+          "https://bonussurfer.com/wp-content/uploads/2019/10/favicon-surfer.png",
       },
     },
     {

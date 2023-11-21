@@ -83,7 +83,7 @@ productRouter.get("/", async (req, res) => {
 
 productRouter.post("/", async (req, res) => {
   try {
-    const postProduct = await postProducts(req.body);
+    let postProduct = await postProducts(req.body);
     // if (!postProduct) throw Error("product not found");
     res.status(201).json(postProduct);
   } catch (error) {
@@ -99,7 +99,7 @@ productRouter.put("/:id/", async (req, res) => {
   const { id } = req.params;
   const { body } = req;
   try {
-    const product = await upDateProduct(id, body);
+    let product = await upDateProduct(id, body);
     res.status(200).json(product);
   } catch (error) {
     res.status(400).json({ msg: error.message });
